@@ -1,0 +1,8 @@
+.sm-nav {
+	position: fixed;
+	width: 100%;
+	top: 65px;
+	left: 0;
+	background: white;
+	padding: 10px;
+}

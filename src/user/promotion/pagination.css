@@ -1,0 +1,18 @@
+.nextButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/fhorgeimages.appspot.com/o/icons%2Farrow_right_FILL0_wght400_GRAD0_opsz48.png?alt=media&token=9d431393-a84b-4e8e-bcf0-714de1b4651d');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.prevButton {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/fhorgeimages.appspot.com/o/icons%2Farrow_left_FILL0_wght400_GRAD0_opsz48.png?alt=media&token=aa4dc80e-09ad-42d3-ba77-48388d29e852');
+    background-repeat: no-repeat;
+    background-position: center;
+}
