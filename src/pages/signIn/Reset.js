@@ -114,7 +114,7 @@ const Reset = () => {
                     </div>
                 </section>
                 <section className='column is-hidden-mobile '>
-                    <img src="/998e6e5.svg" alt="" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/likey-603a7.appspot.com/o/images%2Fcomputer-security-with-login-password-padlock.jpg?alt=media&token=4bce0274-fbc3-404d-b33a-d55ca949e36d" alt="" />
                 </section>
             </div>
 
