@@ -317,15 +317,15 @@ const Profile = () => {
                                                 <form onSubmit={(e) => updatePassword(e)}>
                                                     <div className='form-group mt-2'>
                                                         <label htmlFor='op'>Old Password</label>
-                                                        <input name="op" id="op" value={op} type="password" onChange={e => setOP(e.target.value)} className='form-control' placeholder={'Old Password'} />
+                                                        <input name="op" id="op" required value={op} type="password" onChange={e => setOP(e.target.value)} className='form-control' placeholder={'Old Password'} />
                                                     </div>
                                                     <div className='form-group mt-2'>
                                                         <label htmlFor='twitter'>New Password</label>
-                                                        <input name="np" id="np" value={np} type='password' onChange={e => setNP(e.target.value)} className='form-control' placeholder={'New Password'} />
+                                                        <input name="np" id="np" required value={np} type='password' onChange={e => setNP(e.target.value)} className='form-control' placeholder={'New Password'} />
                                                     </div>
                                                     <div className='form-group mt-2'>
                                                         <label htmlFor='cnp'>Confirm New Password</label>
-                                                        <input name="cnp" id="cnp" type="password" value={cnp} onChange={e => setCNP(e.target.value)} className='form-control' placeholder={'Confirm New Password'} />
+                                                        <input name="cnp" id="cnp" required type="password" value={cnp} onChange={e => setCNP(e.target.value)} className='form-control' placeholder={'Confirm New Password'} />
                                                     </div>
                                                     <div className='d-flex w-100 justify-content-end'>
                                                         <button name="pwdBtn" id="pwdBtn" className='button is-success'>
