@@ -312,7 +312,7 @@ export const User = ({ children }) => {
             button.removeAttribute('disabled');
             button.innerHTML = "Update"
             swal({
-                title: "Personal details",
+                title: "Password",
                 text: "An error occured!",
                 icon: "error",
             })
