@@ -71,6 +71,7 @@ const Profile = () => {
             op: op,
             np: np,
             cnp: cnp,
+            username: auth.userOnline,
         }
         userHook.updatePassword(data);
     }
