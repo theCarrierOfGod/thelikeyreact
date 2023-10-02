@@ -107,7 +107,7 @@ const SignIn = () => {
 
             <div className='columns m-4 mt-5 pt-5 is-centered is-vcentered'>
                 <section className='column is-half '>
-                    <img src="/998e6e5.svg" alt="" />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/likey-603a7.appspot.com/o/images%2F6343845.jpg?alt=media&token=2a15a001-2c13-4699-9319-275cb7dcf8eb" alt="" />
                 </section>
                 <section className={`column is-half`}>
                     <div className="card">
