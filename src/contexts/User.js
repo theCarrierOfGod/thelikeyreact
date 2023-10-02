@@ -276,6 +276,49 @@ export const User = ({ children }) => {
         }
     }
 
+    const updatePassword = async (data) => {
+        try {
+            const res = await axios.post(`${hook.endpoint}/profile/password/update`, data, {
+                headers: {
+                    'content-type': 'application/json',
+                    'X-CSRF-TOKEN': hook.token
+                }
+            })
+                .then((res) => {
+                    if (res.data.success) {
+                        getUserDetails(auth.userOnline)
+                        swal({
+                            title: "Password",
+                            text: "Updated!",
+                            icon: "success",
+                            button: "Proceed!"
+                        })
+                    } else {
+                        swal({
+                            title: "Password",
+                            text: "An error occured!",
+                            icon: "error",
+                        })
+                    }
+                    var button = document.getElementById('pwdBtn');
+                    button.removeAttribute('disabled');
+                    button.innerHTML = "Change"
+                })
+
+        } catch (error) {
+            // Handle errors
+            console.log(error)
+            var button = document.getElementById('pwdBtn');
+            button.removeAttribute('disabled');
+            button.innerHTML = "Update"
+            swal({
+                title: "Personal details",
+                text: "An error occured!",
+                icon: "error",
+            })
+        }
+    }
+
 
     useEffect(() => {
         probUserDetails();

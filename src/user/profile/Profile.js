@@ -25,6 +25,9 @@ const Profile = () => {
     const [uploading, setUploading] = useState(false);
     const [tiktok, setTiktok] = useState('')
     const [alert, setAlert] = useState('');
+    const [op, setOP] = useState('');
+    const [np, setNP] = useState('');
+    const [cnp, setCNP] = useState('');
 
     const UploadImages = (e) => {
         setUploading(true)
@@ -57,6 +60,19 @@ const Profile = () => {
             username: auth.userOnline,
         }
         userHook.updateSocial(data);
+    }
+
+    const updatePassword = (e) => {
+        e.preventDefault();
+        var button = document.getElementById('pwdBtn');
+        button.innerHTML = "..."
+        button.setAttribute('disabled', true);
+        let data = {
+            op: op,
+            np: np,
+            cnp: cnp,
+        }
+        userHook.updatePassword(data);
     }
 
     const savePersonal = (e) => {
@@ -283,6 +299,37 @@ const Profile = () => {
                                                     <div className='d-flex w-100 justify-content-end'>
                                                         <button name="socialButton" id="socialButton" className='button is-info'>
                                                             Update
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-4 grid-margin stretch-card">
+                                    <div className="card">
+                                        <div className="card-body p-2">
+                                            <div className='card-title'>
+                                                Change Password
+                                            </div>
+                                            <hr />
+                                            <div className="">
+                                                <form onSubmit={(e) => updatePassword(e)}>
+                                                    <div className='form-group mt-2'>
+                                                        <label htmlFor='op'>Old Password</label>
+                                                        <input name="op" id="op" value={op} type="password" onChange={e => setOP(e.target.value)} className='form-control' placeholder={'Old Password'} />
+                                                    </div>
+                                                    <div className='form-group mt-2'>
+                                                        <label htmlFor='twitter'>New Password</label>
+                                                        <input name="np" id="np" value={np} type='password' onChange={e => setNP(e.target.value)} className='form-control' placeholder={'New Password'} />
+                                                    </div>
+                                                    <div className='form-group mt-2'>
+                                                        <label htmlFor='cnp'>Confirm New Password</label>
+                                                        <input name="cnp" id="cnp" type="password" value={cnp} onChange={e => setCNP(e.target.value)} className='form-control' placeholder={'Confirm New Password'} />
+                                                    </div>
+                                                    <div className='d-flex w-100 justify-content-end'>
+                                                        <button name="pwdBtn" id="pwdBtn" className='button is-success'>
+                                                            Change
                                                         </button>
                                                     </div>
                                                 </form>
