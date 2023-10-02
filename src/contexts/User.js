@@ -338,7 +338,7 @@ export const User = ({ children }) => {
     return (
         <UserContext.Provider value={{
             userImage, userName, userEmail, userPackage, firstname, lastname, userDetails, facebook, twitter, instagram, phoneNumber, homeActs, taskCount, promotionCount, processedBalance, earnedBalance, depositedBalance, activities, performedCount, tiktok, completed,
-            getUserDetails, getActivities, getHomeActivities, countPromotions, countTasks, updatePicture, updateSocial, countPerformed, updatePersonal, setUserDetails, countCompleted,
+            getUserDetails, getActivities, getHomeActivities, countPromotions, countTasks, updatePicture, updateSocial, countPerformed, updatePersonal, setUserDetails, countCompleted, updatePassword,
         }}>
             {children}
         </UserContext.Provider>
