@@ -106,6 +106,9 @@ const SignIn = () => {
             <TopBar />
 
             <div className='columns m-4 mt-5 pt-5 is-centered is-vcentered'>
+                <section className='column is-half '>
+                    <img src="/998e6e5.svg" alt="" />
+                </section>
                 <section className={`column is-half`}>
                     <div className="card">
                         <div className="card-content">
@@ -161,9 +164,6 @@ const SignIn = () => {
                             </div>
                         </div>
                     </div>
-                </section>
-                <section className='column is-hidden-mobile '>
-                    <img src="/998e6e5.svg" alt="" />
                 </section>
             </div>
 

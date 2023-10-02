@@ -45,7 +45,7 @@ const Reset = () => {
             })
                 .then((res) => {
                     if (res.data.success) {
-
+                        alert(res.data.success.message);
                     } else {
                         let message = res.data.error.message;
                         setUsernameError(message);
@@ -70,6 +70,9 @@ const Reset = () => {
             <TopBar />
 
             <div className='columns m-4 mt-5 pt-5 is-centered is-vcentered'>
+                <section className='column is-half '>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/likey-603a7.appspot.com/o/images%2Fcomputer-security-with-login-password-padlock.jpg?alt=media&token=4bce0274-fbc3-404d-b33a-d55ca949e36d" alt="" />
+                </section>
                 <section className={`column is-half`}>
                     <div className="card">
                         <div className="card-content">
@@ -112,9 +115,6 @@ const Reset = () => {
                             </div>
                         </div>
                     </div>
-                </section>
-                <section className='column is-hidden-mobile '>
-                    <img src="https://firebasestorage.googleapis.com/v0/b/likey-603a7.appspot.com/o/images%2Fcomputer-security-with-login-password-padlock.jpg?alt=media&token=4bce0274-fbc3-404d-b33a-d55ca949e36d" alt="" />
                 </section>
             </div>
 
