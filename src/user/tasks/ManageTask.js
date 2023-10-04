@@ -67,7 +67,7 @@ const ManageTask = () => {
             swal("Manage Task", "Minimum total cost not reached!", "error");
             return;
         }
- 
+
         if (amount === 0) {
             swal("Manage Task", "Minimum amount not reached!", "error");
             return;
@@ -186,7 +186,7 @@ const ManageTask = () => {
                                                             <small>
                                                                 Copy the text above into this text editor to edit it.
                                                             </small>
-                                                            <textarea name="details" id="details"  placeholder="Enter detailed description" rows="5" onChange={(e) => setDetails(e.target.value)} required className="form-control" value={details}></textarea>
+                                                            <textarea name="details" id="details" placeholder="Enter detailed description" rows="5" onChange={(e) => setDetails(e.target.value)} required className="form-control" value={details}></textarea>
                                                             <CKEditor
                                                                 editor={ClassicEditor}
                                                                 className="form-control"
@@ -199,16 +199,30 @@ const ManageTask = () => {
                                                                     toolbar: ['bold', 'italic']
                                                                 }}
                                                                 placeholder={'Copy the text above into this text editor to edit it.'}
-                                                                onReady={ editor => {
+                                                                onReady={editor => {
                                                                     // You can store the "editor" and use when it is needed.
-                                                                    console.log( 'Editor is ready to use!', editor );
+                                                                    console.log('Editor is ready to use!', editor);
                                                                     // editor.setData(details)
-                                                                } }
+                                                                }}
                                                                 onChange={(event, editor) => {
                                                                     setDetails(editor.getData());
                                                                 }}
                                                             />
-                                                            
+                                                            <CKEditor
+                                                                editor={ClassicEditor}
+                                                                className="form-control"
+                                                                name="overview"
+                                                                id="overview"
+                                                                rows="3"
+                                                                required={true}
+                                                                disabled={edit.readOnly}
+                                                                data={task.uniqueTask.description}
+                                                                onChange={(event, editor) => {
+                                                                    const data = editor.getData();
+                                                                    setDetails(data)
+                                                                }}
+                                                            />
+
                                                         </div>
                                                     </div>
 
