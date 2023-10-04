@@ -50,16 +50,6 @@ const Upgrade = () => {
         alert('copied!')
     }
 
-    const initFunding = (e) => {
-        e.preventDefault();
-        if (amount < 5) {
-            return;
-        }
-        setShowQR(true);
-        setStopTime(<Countdown date={Date.now() + 600000} autoStart={true} onStop={() => timerStopped()} />);
-        hook.convertToCrypto(currency, total)
-    }
-
     const add = async (data) => {
         let res = await wallet.upgradeAccount(data);
         if (res) {
@@ -101,7 +91,6 @@ const Upgrade = () => {
             crypto: hook.crypto,
             credits: credits,
             total: total,
-            charge: charge,
             reference: reference.reference,
             userOnline: auth.userOnline
         }
