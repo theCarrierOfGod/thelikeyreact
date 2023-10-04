@@ -98,7 +98,7 @@ const Dashboard = () => {
                                     <div className="card bg-primary card-img-holder text-white">
                                         <div className="card-body p-2">
                                             <img src="/assets/images/dashboard/circle.svg" className="card-img-absolute" alt="CCC" />
-                                            <h4 className="font-weight-normal mb-3 text-right">Free Credits
+                                            <h4 className="font-weight-normal mb-3 text-right">BALANCE
                                             </h4>
                                             <h2 className="mb-2 text-right" style={{ fontSize: '1.5rem' }}>
                                                 &#8358;{userHook.earnedBalance}
@@ -127,7 +127,7 @@ const Dashboard = () => {
                                                 <Link to={'/wallet/withdraw'} className="font-weight-normal mb-3 text-right title is-4" style={{ color: 'white', textDecoration: 'none' }}>Withdrawn</Link>
                                             </h4>
                                             <h2 className="mb-2 text-right" style={{ fontSize: '1.5rem' }}>
-                                                &#8358;
+                                                &#8358;{userHook.withdrawn}
                                             </h2>
                                         </div>
                                     </Link>

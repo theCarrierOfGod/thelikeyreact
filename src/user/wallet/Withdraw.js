@@ -431,7 +431,7 @@ const Withdraw = () => {
                                                                                 {activity.transaction_id}
                                                                             </td>
                                                                             <td>
-                                                                                {activity.amount}{activity.currency.toUpperCase()}
+                                                                                {activity.credits}
                                                                             </td>
                                                                             <td>
                                                                                 {activity.wallet_to}

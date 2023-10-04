@@ -29,6 +29,7 @@ export const User = ({ children }) => {
     const [completed, setCompleted] = useState(0);
     const [earnedBalance, setEarnedBalance] = useState(0);
     const [depositedBalance, setDepositedBalance] = useState(0);
+    const [withdrawn, setWithdrawn] = useState(0);
     const [facebook, setFacebook] = useState('')
     const [twitter, setTwitter] = useState('')
     const [instagram, setInstagram] = useState('');
@@ -42,6 +43,7 @@ export const User = ({ children }) => {
             setUserName(res.data[0].username);
             setDepositedBalance(res.data[0].deposited);
             setEarnedBalance(Math.round(res.data[0].balance));
+            setWithdrawn(Math.round(res.data[0].withdrawn));
             setUserEmail(res.data[0].email);
             if (res.data[0].facebook_id === null) {
                 setFacebook('')
@@ -93,6 +95,7 @@ export const User = ({ children }) => {
             setUserEmail('user@thelikey.com');
             setFetchingDetails(false)
             setPhoneNumber('');
+            setWithdrawn(0)
             setUserPackage('free');
         }
     }
@@ -333,7 +336,7 @@ export const User = ({ children }) => {
 
     return (
         <UserContext.Provider value={{
-            userImage, userName, userEmail, userPackage, firstname, lastname, userDetails, facebook, twitter, instagram, phoneNumber, homeActs, taskCount, promotionCount, earnedBalance, depositedBalance, activities, performedCount, tiktok, completed,
+            userImage, userName, userEmail, userPackage, firstname, lastname, userDetails, facebook, twitter, instagram, phoneNumber, homeActs, taskCount, promotionCount, earnedBalance, depositedBalance, activities, performedCount, tiktok, completed, withdrawn,
             getUserDetails, getActivities, getHomeActivities, countPromotions, countTasks, updatePicture, updateSocial, countPerformed, updatePersonal, setUserDetails, countCompleted, updatePassword,
         }}>
             {children}
