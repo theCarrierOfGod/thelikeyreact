@@ -108,14 +108,13 @@ const TestFund = () => {
             amount: amount,
             currency: 'NGN',
             walletTo: `transfer ${name}`,
-            crypto: hook.rate * amount,
             credits: credits,
             total: total,
             charge: charge,
             userOnline: auth.userOnline
         }
         swal({
-            title: 'Buy Credit',
+            title: 'Fund Wallet',
             text: 'Have you made the transfer?',
             icon: 'warning',
             buttons: ["Stop", "Yes, Proceed!"],
@@ -125,7 +124,7 @@ const TestFund = () => {
                     add(data);
                 } else {
                     swal({
-                        title: 'Buy Credit',
+                        title: 'Fund Wallet',
                         text: 'Cancelled by user',
                         icon: 'error',
                         timer: 2000
@@ -167,7 +166,7 @@ const TestFund = () => {
                                         </li>
                                     </ul>
                                 </nav>
-                            </div> 
+                            </div>
 
                             <div className="row justify-content-start">
                                 <div className="col-lg-12 grid-margin">
@@ -180,7 +179,7 @@ const TestFund = () => {
                                                 INFORMATION
                                             </h4>
                                             <br />
-                                            <strong>Existing balance: {userHook.balance}</strong> <br /> <br />
+                                            <strong>Existing balance: &#8358; {userHook.earnedBalance}</strong> <br /> <br />
                                             <p className="card-description">
                                                 Minimum deposit amount is <b>&#8358; 200</b> <br />
                                             </p>
@@ -299,7 +298,6 @@ const TestFund = () => {
                                                             <th scope="col">#</th>
                                                             <th scope="col">TRANSACTION ID</th>
                                                             <th scope="col">AMOUNT</th>
-                                                            <th scope="col">CREDITS</th>
                                                             <th scope="col">STATUS</th>
                                                             <th scope="col">DATE</th>
                                                         </tr>
@@ -317,7 +315,7 @@ const TestFund = () => {
                                                                                 {activity.transaction_id}
                                                                             </td>
                                                                             <td>
-                                                                                {activity.credits}
+                                                                                &#8358;{activity.credits}
                                                                             </td>
                                                                             <td>
                                                                                 {activity.status}
