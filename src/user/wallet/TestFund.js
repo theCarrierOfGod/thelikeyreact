@@ -268,12 +268,12 @@ const TestFund = () => {
                                             <br />
                                             <strong>Existing balance: {userHook.balance}</strong> <br /> <br />
                                             <p className="card-description">
-                                                Minimum deposit amount is <b>&#8358; 400</b> <br />
+                                                Minimum deposit amount is <b>&#8358; 200</b> <br />
                                             </p>
                                             <div class="select">
                                                 <select onChange={(e) => setMethod(e.target.value)}>
                                                     <option value={''}>Select payment method</option>
-                                                    {/* <option value={'crypto'}>CRYPTOCURRENCY</option> */}
+                                                    <option value={'card'}>INTERNET BANKING</option>
                                                     <option value={'transfer'}>BANK TRANSFER</option>
                                                 </select>
                                             </div>
@@ -512,17 +512,9 @@ const TestFund = () => {
 
                                             <form id="cryptoform" onSubmit={(e) => { PayWithPaystack(e) }}>
                                                 <div className="form-group">
-                                                    <label for="cryptoamount">Amount (USD)</label>
-                                                    <input type="number" min="1"
-                                                        name="cryptoamount" className="form-control" value={amount} onChange={(e) => calculateCredits(e)} placeholder="Amount in USD" required id="cryptoamount" />
-                                                    <small className='mt-2' style={{ fontSize: '11px', width: '100%', textAlign: 'right', display: 'block', color: '#002347' }}>
-                                                        {(credits === "" || credits === 0) ? "" : (
-                                                            <>
-                                                                {credits} credits <br />
-                                                                <strong>{hook.rate * amount} NGN</strong> <br />
-                                                            </>
-                                                        )}
-                                                    </small>
+                                                    <label for="cryptoamount">Amount</label>
+                                                    <input type="number" min="200"
+                                                        name="cryptoamount" className="form-control" value={amount} onChange={(e) => calculateCredits(e)} placeholder="Amount" required id="cryptoamount" />
                                                 </div>
 
                                                 <div className="d-flex justify-content-right" >
@@ -554,7 +546,7 @@ const TestFund = () => {
                                             <form id="cryptoform" onSubmit={(e) => { PayWithTransfer(e) }}>
                                                 <div className="form-group">
                                                     <label for="cryptoamount">Amount</label>
-                                                    <input type="number" min="400"
+                                                    <input type="number" min="200"
                                                         name="cryptoamount" className="form-control" value={amount} onChange={(e) => calculateCredits(e)} placeholder="Amount" required id="cryptoamount" />
                                                 </div>
 
@@ -595,7 +587,7 @@ const TestFund = () => {
                                                         <tr>
                                                             <th scope="col">#</th>
                                                             <th scope="col">TRANSACTION ID</th>
-                                                            <th scope="col">AMOUNT (USD)</th>
+                                                            <th scope="col">AMOUNT</th>
                                                             <th scope="col">CREDITS</th>
                                                             <th scope="col">STATUS</th>
                                                             <th scope="col">DATE</th>
@@ -612,9 +604,6 @@ const TestFund = () => {
                                                                             </th>
                                                                             <td>
                                                                                 {activity.transaction_id}
-                                                                            </td>
-                                                                            <td>
-                                                                                {activity.amount_usd}
                                                                             </td>
                                                                             <td>
                                                                                 {activity.credits}
