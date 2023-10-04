@@ -215,7 +215,6 @@ const ManageTask = () => {
                                                                 id="overview"
                                                                 rows="3"
                                                                 required={true}
-                                                                disabled={edit.readOnly}
                                                                 data={task.uniqueTask.description}
                                                                 onChange={(event, editor) => {
                                                                     const data = editor.getData();
