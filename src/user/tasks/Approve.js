@@ -53,10 +53,41 @@ const Approve = () => {
                     text: res.data.error,
                     icon: 'error',
                 })
-            } 
+            }
         } catch (error) {
             swal({
                 title: 'Approve Proof',
+                text: error.message,
+                icon: 'error',
+            })
+        }
+    }
+
+    const approveAProof = async (taskID) => {
+        try {
+            const res = await axios.get(`${hook.endpoint}/admin/approve/task/${taskID}`);
+            console.log(res.data);
+            if (res.data.success) {
+                swal({
+                    title: 'Approve all Proofs',
+                    text: 'Proof approved',
+                    icon: 'success',
+                    timer: 2000
+                })
+                    .then((res) => {
+                        goNow();
+                    })
+
+            } else {
+                swal({
+                    title: 'Approve all Proofs',
+                    text: res.data.error,
+                    icon: 'error',
+                })
+            }
+        } catch (error) {
+            swal({
+                title: 'Approve all Proofs',
                 text: error.message,
                 icon: 'error',
             })
@@ -226,6 +257,31 @@ const Approve = () => {
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
+                                                            <button
+                                                                className='button is-success'
+                                                                onClick={() => {
+                                                                    swal({
+                                                                        title: 'Approve all Proofs',
+                                                                        text: 'Do you really want to proceed?',
+                                                                        icon: 'warning',
+                                                                        buttons: ["Stop", "Yes, Proceed!"],
+                                                                    })
+                                                                        .then((res) => {
+                                                                            if (res) {
+                                                                                approveAProof(task.uniqueTask.unique_id)
+                                                                            } else {
+                                                                                swal({
+                                                                                    title: 'Approve all Proofs',
+                                                                                    text: 'Cancelled by user',
+                                                                                    icon: 'error',
+                                                                                    timer: 2000
+                                                                                })
+                                                                            }
+                                                                        })
+                                                                }}
+                                                            >
+                                                                Approve all proofs
+                                                            </button>
                                                         </>
                                                     )}
                                                 </>
@@ -255,9 +311,6 @@ const Approve = () => {
                                             <>
                                                 <div className="col-lg-12">
                                                     <div className="card-body p-2">
-                                                        {/* <b>
-                                                            {proof.taskID}
-                                                        </b> */}
                                                         <div className='card-columns'>
                                                             {JSON.parse(proof.proofURL).map((image) => (
                                                                 <div className="card">
