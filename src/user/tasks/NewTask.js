@@ -258,7 +258,6 @@ const NewTask = () => {
                                                                     setDetails(editor.getData());
                                                                 }}
                                                             />
-                                                            {/* <textarea name="details" id="details" placeholder="Enter detailed description" rows="5" onChange={(e) => setDetails(e.target.value)} required className="form-control" value={details}></textarea> */}
                                                         </div>
                                                     </div>
 
@@ -298,7 +297,7 @@ const NewTask = () => {
 
                                                     <div className="col-sm-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="cpu">Cost per user (CREDITS)</label>
+                                                            <label htmlFor="cpu">Cost per user</label>
                                                             <select className="form-select p-2" id="cpu" name="cpu" required defaultChecked={minCPU} onChange={(e) => calcTotal(e.target.value, amount)}>
                                                                 {cpus.map((cost) => (
                                                                     <option key={cost} id={cost} value={cost}>

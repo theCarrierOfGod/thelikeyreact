@@ -90,7 +90,7 @@ const ReferNEarn = () => {
                                 <div className='col-md-8'>
                                     <div className='notification mb-3'>
                                         <span className='title is-6 mb-3' style={{ textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                                            "Share your referral link with your friends and family to earn real cash after they sign up and activate their account." <br />Earn 15 credits per person you refer.
+                                            "Share your referral link with your friends and family to earn real cash after they sign up and activate their account." <br />Earn &#8358;20 per person you refer.
                                         </span>
                                         <p className={alert !== "" ? "floatingAlert" : "d-none"} >
                                             {alert}

@@ -149,7 +149,7 @@ const Profile = () => {
 
                             <div className='notification'>
                                 <span className='title is-6 mb-3' style={{ textTransform: 'uppercase', fontFamily: 'monospace' }}>
-                                    Earn as much as 25 credits for referring new users.
+                                    Earn as much as &#8358;20 for referring new users.
                                 </span>
                                 
                                 <p className={alert !== "" ? "floatingAlert" : "d-none"} >
@@ -194,10 +194,7 @@ const Profile = () => {
                                                     <b>Email Adress: </b> {userHook.userEmail}
                                                 </p>
                                                 <p>
-                                                    <b>Free Credits: </b> {userHook.earnedBalance}
-                                                </p>
-                                                <p>
-                                                    <b>Withdrawable Credits: </b>  {userHook.depositedBalance}
+                                                    <b>Balance </b> &#8358;{userHook.earnedBalance}
                                                 </p>
                                                 <p>
                                                     <b>Location: </b> {userHook.userDetails.location}

@@ -44,7 +44,7 @@ const Header = () => {
             position: "fixed"
         }}>
             <div className="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <Link className="navbar-brand brand-logo d-flex" to="https://thelikey.com" style={{ alignItems: 'center' }}>
+                <Link className="navbar-brand brand-logo d-flex" to="/" style={{ alignItems: 'center' }}>
                     <img src={Logo} alt="logo" style={{ marginLeft: '20px', marginRight: '10px' }} />
                 </Link>
             </div>
@@ -80,8 +80,6 @@ const Header = () => {
                             <Link className="dropdown-item" to="/profile">
                                 <i className="mdi mdi-account-convert me-2 text-success"></i> My Profile </Link>
                             <div className="dropdown-divider"></div>
-                            <Link className={`${admin ? 'dropdown-item' : 'is-hidden'}`} to="/test_fund">
-                                <i className="mdi mdi-account-convert me-2 text-success"></i> Test Fund </Link>
                             <Link className="dropdown-item isBtn" onClick={() => auth.logOut()}>
                                 <i className="mdi mdi-logout me-2 text-primary"></i> Signout </Link>
                         </div>

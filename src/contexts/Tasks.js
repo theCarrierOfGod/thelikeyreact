@@ -145,7 +145,7 @@ export const Tasks = ({ children }) => {
                         })
                             .then(() => {
                                 userHook.getUserDetails(auth.userOnline)
-                                navigate(`/task/manage/${res.data.unique_id}`)
+                                navigate(`/task/manage`)
                             })
                     }
                     console.log(res)

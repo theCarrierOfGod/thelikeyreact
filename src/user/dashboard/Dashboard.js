@@ -210,7 +210,7 @@ const Dashboard = () => {
                                                                                 {hook.getDate(act.created_at)}
                                                                             </p>
                                                                             <p className="mb-0">
-                                                                                {act.amount} {act.currency} (status :: <i style={{ fontWeight: '11px' }} >{act.status}</i>)
+                                                                                &#8358;{act.credits} (status :: <i style={{ fontWeight: '11px' }} >{act.status}</i>)
                                                                             </p>
                                                                         </div>
                                                                     </li>
@@ -235,7 +235,7 @@ const Dashboard = () => {
                                                                                 {hook.getDate(act.created_at)}
                                                                             </p>
                                                                             <p className="mb-0">
-                                                                                {act.credits} credits (status :: <i style={{ fontWeight: '11px' }} >{act.status}</i>)
+                                                                                &#8358;{act.credits} (status :: <i style={{ fontWeight: '11px' }} >{act.status}</i>)
                                                                             </p>
                                                                         </div>
                                                                     </li>

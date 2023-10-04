@@ -271,7 +271,7 @@ const Withdraw = () => {
                                                             className="form-control"
                                                             value={credit}
                                                             onChange={(e) => validateCredit(e.target.value)}
-                                                            placeholder="Credits"
+                                                            placeholder="&#8358;"
                                                             required
                                                             id="credits"
                                                         />
@@ -349,7 +349,7 @@ const Withdraw = () => {
                                                             className="form-control"
                                                             value={credit}
                                                             onChange={(e) => validateCredit(e.target.value)}
-                                                            placeholder="Credits"
+                                                            placeholder="&#8358;"
                                                             required
                                                             id="credits"
                                                         />
@@ -372,14 +372,14 @@ const Withdraw = () => {
                                                         />
                                                     </div>
                                                     <div className="form-group">
-                                                        <label for="amount">Amount (USD)</label>
+                                                        <label for="amount">Amount</label>
                                                         <input
                                                             type="number"
                                                             min={1}
                                                             name="amount"
                                                             className="form-control"
                                                             value={amount}
-                                                            placeholder="Amount in USD"
+                                                            placeholder="Amount"
                                                             required
                                                             id="amount"
                                                             readOnly={true}

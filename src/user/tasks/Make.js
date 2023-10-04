@@ -32,7 +32,6 @@ const Make = () => {
 
     const goNow = (platform, type, location) => {
         task.getTasksToDo(auth.userOnline, platform, type, location);
-
     }
 
     const getTasksToDo = async (username) => {

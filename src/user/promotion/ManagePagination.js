@@ -49,7 +49,7 @@ const ManagePagination = ({ items, perpage, type }) => {
                                 <h5>
                                     {promotion.title}
                                     <b className="text-info float-end">
-                                        &#8358; {promotion.cpu - promotion.deduction}
+                                        &#8358; {promotion.cpu}
                                     </b>
                                 </h5>
                                 {type === "task" ? <div dangerouslySetInnerHTML={{ __html: promotion.description }}></div> : null}
