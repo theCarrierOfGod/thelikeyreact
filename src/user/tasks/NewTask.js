@@ -32,7 +32,7 @@ const NewTask = () => {
 
     const platformHandler = (e) => {
         setSocialMedia(e.target.value)
-        alert(e.target.type)
+        alert(e.target.name)
 
         if (e.target.value === "custom") {
             document.getElementById('promotionType').setAttribute('disabled', true);
@@ -40,6 +40,7 @@ const NewTask = () => {
             document.getElementById('promotionType').style.display = "none";
             document.getElementById('promotionType2').removeAttribute('disabled');
             document.getElementById('promotionType2').style.display = "block";
+            setMINCPU(20)
         } else {
             hook.getPlatformPromotions(e.target.value);
             document.getElementById('promotionType').removeAttribute('disabled');
@@ -47,6 +48,11 @@ const NewTask = () => {
             document.getElementById('promotionType2').setAttribute('disabled', true);
             document.getElementById('promotionType2').style.display = "none";
             document.getElementById('promotionLabel').setAttribute('for', 'promotionType');
+            if(e.target.name === "promotion") {
+                setMINCPU(3)
+            } else {
+                setMINCPU(20)
+            }
         }
     }
 
@@ -87,6 +93,11 @@ const NewTask = () => {
 
         if (amount === 0) {
             swal("New Task", "Minimum amount not reached!", "error");
+            return;
+        }
+
+        if (cpu < minCPU) {
+            swal("New Task", "Minimum cost per user not reached!", "error");
             return;
         }
 
@@ -192,7 +203,7 @@ const NewTask = () => {
                                                                 {hook.taskPlatforms.length === 0 ? null : (
                                                                     <>
                                                                         {hook.taskPlatforms.map((taskPlatforms) => (
-                                                                            <option key={taskPlatforms.id} id={taskPlatforms.nicename} value={taskPlatforms.nicename} type={taskPlatforms.type}>
+                                                                            <option key={taskPlatforms.id} id={taskPlatforms.nicename} value={taskPlatforms.nicename} name={taskPlatforms.type}>
                                                                                 {taskPlatforms.name}
                                                                             </option>
                                                                         ))}
