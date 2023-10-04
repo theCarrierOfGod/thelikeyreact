@@ -32,7 +32,7 @@ const Withdraw = () => {
     const validateCredit = (amount) => {
         setCredit(amount)
 
-        if (Number(amount) > Number(userHook.earnedBalance) || Number(amount) < 2500 || (Number(amount) % 500 !== 0)) {
+        if (Number(amount) > Number(userHook.earnedBalance) || Number(amount) < 1000 || (Number(amount) % 500 !== 0)) {
             setProceed(false);
         } else {
             setProceed(true);
@@ -84,7 +84,7 @@ const Withdraw = () => {
     const processBankForm = (e) => {
         e.preventDefault();
 
-        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5 || amount < 2500)  {
+        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5 || amount < 1000)  {
             swal({
                 title: 'Withdraw',
                 text: 'Bank details not complete',
@@ -93,10 +93,10 @@ const Withdraw = () => {
             return;
         }
 
-        if (amount < 2500)  {
+        if (amount < 1000)  {
             swal({
                 title: 'Withdraw',
-                text: 'Minimum withdrawal is &#8358;2500',
+                text: 'Minimum withdrawal is &#8358;1000',
                 icon: 'warning'
             });
             return;
@@ -189,7 +189,7 @@ const Withdraw = () => {
                                                 You can only withdraw from your withdrawable credits.
                                                 <br />
                                                 <strong className='is-danger text-danger' style={{ fontFamily: 'monospace' }}>
-                                                    Minimum withdrawal is &#8358;2500
+                                                    Minimum withdrawal is &#8358;1000
                                                 </strong>
                                                 <br />
                                                 <strong className='is-danger text-danger' style={{ fontFamily: 'monospace' }}>
@@ -266,7 +266,7 @@ const Withdraw = () => {
                                                         <label for="credits">Amount</label>
                                                         <input
                                                             type="number"
-                                                            min={2500}
+                                                            min={1000}
                                                             name="credits"
                                                             className="form-control"
                                                             value={credit}
