@@ -100,7 +100,7 @@ const ManageTask = () => {
         setTargetAudience(task.uniqueTask.location);
         setStatus(task.uniqueTask.status);
         setDetails(task.uniqueTask.description)
-        setDetails('<p>This house is bitching</p>');
+        // setDetails('<p>This house is bitching</p>');
         return () => {
             return true;
         }
@@ -183,7 +183,7 @@ const ManageTask = () => {
                                                             <label htmlFor="details">
                                                                 Details
                                                             </label>
-                                                            {/* <CKEditor
+                                                            <CKEditor
                                                                 editor={ClassicEditor}
                                                                 className="form-control"
                                                                 name="details"
@@ -198,12 +198,12 @@ const ManageTask = () => {
                                                                 onReady={ editor => {
                                                                     // You can store the "editor" and use when it is needed.
                                                                     console.log( 'Editor is ready to use!', editor );
-                                                                    editor.setData(details)
+                                                                    // editor.setData(details)
                                                                 } }
                                                                 onChange={(event, editor) => {
                                                                     setDetails(editor.getData());
                                                                 }}
-                                                            /> */}
+                                                            />
                                                             <textarea name="details" id="details"  placeholder="Enter detailed description" rows="5" onChange={(e) => setDetails(e.target.value)} required className="form-control" value={details}></textarea>
                                                         </div>
                                                     </div>
