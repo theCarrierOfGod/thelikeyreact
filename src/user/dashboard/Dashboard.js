@@ -80,7 +80,7 @@ const Dashboard = () => {
                                 </nav>
                             </div>
 
-                            <div className="row justify-content-center">
+                            <div className="row justify-content-between">
                                 <Pick />
                                 <div className="col-md-3 col-sm-6 col-6 stretch-card grid-margin">
                                     <div className="card bg-info card-img-holder text-dark">
@@ -132,7 +132,7 @@ const Dashboard = () => {
                                         </div>
                                     </Link>
                                 </div>
-                                <div className='col-md-12 strech-card grid-margin'>
+                                <div className='col-md-12 d-none strech-card grid-margin'>
                                     <div className='notification is-info is-light p-1' style={{ fontFamily: 'monospace', fontSize: '8px' }}>
                                         <p>Free credits are used for <strong><Link to="/promotion/new" style={{ textDecoration: 'none' }}>promotions</Link>.</strong></p>
                                         <p>Withdrawable credits are used for <strong><Link to="/task/new" style={{ textDecoration: 'none' }}>tasks</Link></strong> </p>

@@ -555,7 +555,7 @@ const TestFund = () => {
                                                 <div className="form-group">
                                                     <label for="cryptoamount">Amount</label>
                                                     <input type="number" min="400"
-                                                        name="cryptoamount" className="form-control" value={amount} onChange={(e) => calculateCredits(e)} placeholder="Amount in USD" required id="cryptoamount" />
+                                                        name="cryptoamount" className="form-control" value={amount} onChange={(e) => calculateCredits(e)} placeholder="Amount" required id="cryptoamount" />
                                                 </div>
 
                                                 <div className="form-group">

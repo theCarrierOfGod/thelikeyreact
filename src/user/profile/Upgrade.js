@@ -31,7 +31,7 @@ const Upgrade = () => {
     const [showQR, setShowQR] = useState(false);
     const [total, setTotal] = useState('');
     const [sendingFunding, setSendingFunding] = useState(false);
-    const [stopTime, setStopTime] = useState(1000);
+    const [stopTime, setStopTime] = useState(2000);
     const [paying, setPaying] = useState(false);
     const [method, setMethod] = useState('');
     const [name, setName] = useState('');
@@ -214,7 +214,7 @@ const Upgrade = () => {
                                             <br />
                                             
                                             <p className="card-description">
-                                                Cost for account upgrade is <b> $ 1</b> OR <b> {hook.rate}NGN </b> <br />
+                                                Cost for account upgrade is <b> $ 1</b> OR <b> &#8358; 2000 </b> <br />
                                             </p>
                                             <div className={userHook.userPackage === 'free' ? 'd-block' : 'd-none'}>
                                                 <div class="select">
@@ -438,9 +438,9 @@ const Upgrade = () => {
 
                                             <form id="cryptoform" onSubmit={(e) => { PayWithTransfer(e) }}>
                                                 <div className="form-group">
-                                                    <label for="cryptoamount">Amount (USD)</label>
+                                                    <label for="cryptoamount">Amount</label>
                                                     <input type="number" min="1"
-                                                        name="cryptoamount" className="form-control" value={amount} placeholder="Amount in USD" required id="cryptoamount" />
+                                                        name="cryptoamount" className="form-control" value={amount} placeholder="Amount" required id="cryptoamount" />
                                                 </div>
                                                 <div className="form-group">
                                                     <label for="name">Name</label>
@@ -449,7 +449,7 @@ const Upgrade = () => {
                                                 </div>
 
                                                 <p>
-                                                    Make a transfer of <strong>{hook.rate * amount} NGN</strong> to the bank account below:
+                                                    Make a transfer of <strong>{amount} NGN</strong> to the bank account below:
                                                 </p>
                                                 <p>
                                                     <strong>BANK NAME:</strong> Palmpay

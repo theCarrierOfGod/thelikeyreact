@@ -12,7 +12,7 @@ const ManagePagination = ({ items, perpage, type }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const currentItems = items.slice(itemOffset, endOffset);
 
- 
+
     const handleNext = () => {
         if (pageCount !== currentPage) {
             setCurrentPage(currentPage + 1);
@@ -44,12 +44,12 @@ const ManagePagination = ({ items, perpage, type }) => {
             {currentItems.map((promotion) => (
                 <>
                     <div className="col-md-4 col-sm-6 mt-4">
-                        <div className="p-2 pb-3 mb-1" style={{ border: '1px solid rgba(0, 0, 0, 0.125)', height: '100%' }}>
+                        <div className="card p-2 pb-3 mb-1" style={{ border: '1px solid rgba(0, 0, 0, 0.125)', height: '100%' }}>
                             <form className="card-body p-0">
                                 <h5>
                                     {promotion.title}
                                     <b className="text-info float-end">
-                                        {promotion.cpu}<i className="mdi mdi-coin"></i>
+                                        &#8358; {promotion.cpu - promotion.deduction}
                                     </b>
                                 </h5>
                                 {type === "task" ? <div dangerouslySetInnerHTML={{ __html: promotion.description }}></div> : null}
@@ -62,7 +62,7 @@ const ManagePagination = ({ items, perpage, type }) => {
                                                 </b>
                                             </td>
                                             <td>
-                                                {promotion.cpu} credits
+                                                &#8358; {promotion.cpu - promotion.deduction}
                                             </td>
                                         </tr>
                                         {type !== "performed" ? (
