@@ -28,11 +28,12 @@ const NewTask = () => {
     const [cpu, setCpu] = useState(20)
     const [total, setTotal] = useState(cpu * amount);
     const [linkErr, setLinkErr] = useState(false);
+    const [taskType, setTaskType] = useState('');
 
 
     const platformHandler = (e) => {
         setSocialMedia(e.target.value)
-        alert(e.target.name)
+        alert(e.target.var)
         console.log(e.target)
 
         if (e.target.value === "custom") {
@@ -116,6 +117,7 @@ const NewTask = () => {
             amount: amount,
             cpu: cpu,
             total: total,
+            theType: taskType,
             userOnline: auth.userOnline
         }
 
@@ -182,7 +184,7 @@ const NewTask = () => {
                                 <div className='col-md-8 grid-margin'>
                                     <div className={"notification is-primary is-light"}>
                                         <button className="delete is-hidden"></button>
-                                        Insufficient Credits ? <Link to={'/wallet/add_fund'} className='is-secondary'>Buy Credits Now</Link>
+                                        Insufficient Balance ? <Link to={'/wallet/add_fund'} className='is-secondary'>Fund Wallet Now</Link>
                                     </div>
                                 </div>
 
