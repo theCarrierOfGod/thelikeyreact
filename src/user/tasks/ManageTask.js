@@ -183,31 +183,7 @@ const ManageTask = () => {
                                                             <label htmlFor="details">
                                                                 Details
                                                             </label>
-                                                            <small>
-                                                                Copy the text above into this text editor to edit it.
-                                                            </small>
-                                                            <textarea name="details" id="details" placeholder="Enter detailed description" rows="5" onChange={(e) => setDetails(e.target.value)} required className="form-control" value={details}></textarea>
-                                                            <CKEditor
-                                                                editor={ClassicEditor}
-                                                                className="form-control"
-                                                                name="details"
-                                                                id="details"
-                                                                rows="5"
-                                                                required={true}
-                                                                style={{ outerHeight: '200px', innerHeight: '200px', maxHeight: '200px' }}
-                                                                config={{
-                                                                    toolbar: ['bold', 'italic']
-                                                                }}
-                                                                placeholder={'Copy the text above into this text editor to edit it.'}
-                                                                onReady={editor => {
-                                                                    // You can store the "editor" and use when it is needed.
-                                                                    console.log('Editor is ready to use!', editor);
-                                                                    // editor.setData(details)
-                                                                }}
-                                                                onChange={(event, editor) => {
-                                                                    setDetails(editor.getData());
-                                                                }}
-                                                            />
+                                                            
                                                             <CKEditor
                                                                 editor={ClassicEditor}
                                                                 className="form-control"
