@@ -41,7 +41,7 @@ export const User = ({ children }) => {
             setUserDetails(res.data[0]);
             setUserName(res.data[0].username);
             setDepositedBalance(res.data[0].deposited);
-            setEarnedBalance(res.data[0].balance);
+            setEarnedBalance(Math.round(res.data[0].balance));
             setUserEmail(res.data[0].email);
             if (res.data[0].facebook_id === null) {
                 setFacebook('')
