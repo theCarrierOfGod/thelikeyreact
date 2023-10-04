@@ -62,7 +62,7 @@ const ManagePagination = ({ items, perpage, type }) => {
                                                 </b>
                                             </td>
                                             <td>
-                                                &#8358; {promotion.cpu - promotion.deduction}
+                                                &#8358; {promotion.cpu}
                                             </td>
                                         </tr>
                                         {type !== "performed" ? (

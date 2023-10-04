@@ -99,7 +99,7 @@ const ManageTask = () => {
         setTotal(task.uniqueTask.total_cost)
         setTargetAudience(task.uniqueTask.location);
         setStatus(task.uniqueTask.status);
-        // setDetails(task.uniqueTask.description)
+        setDetails(task.uniqueTask.description)
         setDetails('<p>This house is bitching</p>');
         return () => {
             return true;

@@ -299,7 +299,7 @@ const NewTask = () => {
                                                     <div className="col-sm-6">
                                                         <div className="form-group">
                                                             <label htmlFor="cpu">Cost per user (CREDITS)</label>
-                                                            <select className="form-select p-2" id="cpu" name="cpu" required onChange={(e) => calcTotal(e.target.value, amount)}>
+                                                            <select className="form-select p-2" id="cpu" name="cpu" required defaultChecked={minCPU} onChange={(e) => calcTotal(e.target.value, amount)}>
                                                                 {cpus.map((cost) => (
                                                                     <option key={cost} id={cost} value={cost}>
                                                                         {cost}
@@ -311,7 +311,7 @@ const NewTask = () => {
 
                                                     <div className="col-sm-12">
                                                         <div className="form-group">
-                                                            <label htmlFor="total">TOTAL (CREDITS)</label>
+                                                            <label htmlFor="total">TOTAL</label>
                                                             <input type={'number'} className="form-control" readOnly={true} name="total" id="total" value={total} required />
                                                         </div>
                                                     </div>
