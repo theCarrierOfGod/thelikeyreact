@@ -97,7 +97,7 @@ const Sidebar = () => {
                     <li class="nav-item border-bottom">
                         <a class={`nav-link ${location.pathname === "/promotion/new" ? "active" : ""}`} data-bs-toggle="collapse" href="#wallet" aria-expanded="false" aria-controls="tasks">
                             <i class="mdi mdi-square-inc-cash  menu-icon m-0 p-0"></i> &nbsp; &nbsp;
-                            <span class="menu-title">Manage Credits</span>
+                            <span class="menu-title">Wallet</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="wallet">
@@ -107,7 +107,7 @@ const Sidebar = () => {
 
                                 <li className={`nav-item ${location.pathname === "/wallet/add_fund" ? "active" : ""}`}>
                                     <Link className="nav-link" to="/wallet/add_fund">
-                                        <span className="menu-title">Buy Credits</span>
+                                        <span className="menu-title">Fund Wallet</span>
                                     </Link>
                                 </li>
 
@@ -123,7 +123,7 @@ const Sidebar = () => {
 
                                 <li className={`nav-item ${location.pathname === "/wallet/withdraw" ? "active" : ""}`}>
                                     <Link className="nav-link" to="/wallet/withdraw">
-                                        <span className="menu-title">Withdraw Credits</span>
+                                        <span className="menu-title">Withdrawal</span>
                                     </Link>
                                 </li>
                             </ul>

@@ -229,7 +229,7 @@ const TestFund = () => {
         <>
             <Helmet>
                 <title>
-                    Add Funds | The LIKEY
+                    Fund Wallet | The LIKEY
                 </title>
             </Helmet>
             <div className='container-scroller'>
@@ -244,7 +244,7 @@ const TestFund = () => {
                                     <span className="page-title-icon bg-success text-white me-2">
                                         <i className="mdi mdi-transfer-line"></i>
                                         <span className="iconify" data-icon="icon-park:add"></span>
-                                    </span> PURCHASE CREDITS
+                                    </span> FUND WALLET
                                 </h3>
                                 <nav aria-label="breadcrumb">
                                     <ul className="breadcrumb">

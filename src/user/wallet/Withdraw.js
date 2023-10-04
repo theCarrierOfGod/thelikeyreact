@@ -162,7 +162,7 @@ const Withdraw = () => {
                                     <span className="page-title-icon bg-success text-white me-2">
                                         <i className="mdi mdi-transfer-line"></i>
                                         <span className="iconify" data-icon="streamline:money-atm-card-2-deposit-money-payment-finance-atm-withdraw"></span>
-                                    </span> WITHDRAW CRYPTO
+                                    </span> WITHDRAW
                                 </h3>
                                 <nav aria-label="breadcrumb">
                                     <ul className="breadcrumb">
