@@ -344,6 +344,76 @@ export const Hook = ({ children }) => {
 
     const taskPlatforms = [
         {
+            "id": "1",
+            "name": "FACEBOOK",
+            "nicename": "facebook",
+            "type": "promotion",
+            "created_at": "2023-08-05 12:36:58"
+        },
+        {
+            "id": "2",
+            "name": "TWITTER",
+            "nicename": "twitter",
+            "type": "promotion",
+            "created_at": "2023-08-05 12:36:58"
+        },
+        {
+            "id": "3",
+            "name": "INSTAGRAM",
+            "nicename": "instagram",
+            "type": "promotion",
+            "created_at": "2023-08-05 12:37:29"
+        },
+        {
+            "id": "4",
+            "name": "TIKTOK",
+            "nicename": "tiktok",
+            "type": "promotion",
+            "created_at": "2023-08-05 12:37:29"
+        },
+        {
+            "id": "18",
+            "name": "LIKEE",
+            "nicename": "likee",
+            "type": "promotion",
+            "created_at": "2023-08-08 11:41:12"
+        },
+        {
+            "id": "19",
+            "name": "SNAPCHAT",
+            "nicename": "snapchat",
+            "type": "promotion",
+            "created_at": "2023-08-08 11:41:31"
+        },
+        {
+            "id": "20",
+            "name": "TUMBLR",
+            "nicename": "tumblr",
+            "type": "promotion",
+            "created_at": "2023-08-08 11:42:03"
+        },
+        {
+            "id": "21",
+            "name": "TWITCH",
+            "nicename": "twitch",
+            "type": "promotion",
+            "created_at": "2023-08-08 11:42:21"
+        },
+        {
+            "id": "22",
+            "name": "VK",
+            "nicename": "vk",
+            "type": "promotion",
+            "created_at": "2023-08-08 11:42:40"
+        },
+        {
+            "id": "23",
+            "name": "YOUTUBE",
+            "nicename": "youtube",
+            "type": "promotion",
+            "created_at": "2023-08-08 11:42:58"
+        },
+        {
             "id": 11,
             "name": "ADS CLICK",
             "nicename": "ads click",

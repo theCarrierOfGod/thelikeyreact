@@ -23,7 +23,8 @@ const NewTask = () => {
     const [details, setDetails] = useState('')
     const [targetAudience, setTargetAudience] = useState('Worldwide')
     const [weblink, setWeblink] = useState('')
-    const [amount, setAmount] = useState(0)
+    const [amount, setAmount] = useState(0);
+    const [minCPU, setMINCPU] = useState(3);
     const [cpu, setCpu] = useState(20)
     const [total, setTotal] = useState(cpu * amount);
     const [linkErr, setLinkErr] = useState(false);
@@ -31,6 +32,7 @@ const NewTask = () => {
 
     const platformHandler = (e) => {
         setSocialMedia(e.target.value)
+        alert(e.target.type)
 
         if (e.target.value === "custom") {
             document.getElementById('promotionType').setAttribute('disabled', true);
@@ -49,7 +51,7 @@ const NewTask = () => {
     }
 
     let cpus = [];
-    for (let i = 20; i < 121; i++) {
+    for (let i = minCPU; i < 121; i++) {
         cpus.push(i);
     }
 
@@ -190,7 +192,7 @@ const NewTask = () => {
                                                                 {hook.taskPlatforms.length === 0 ? null : (
                                                                     <>
                                                                         {hook.taskPlatforms.map((taskPlatforms) => (
-                                                                            <option key={taskPlatforms.id} id={taskPlatforms.nicename} value={taskPlatforms.nicename}>
+                                                                            <option key={taskPlatforms.id} id={taskPlatforms.nicename} value={taskPlatforms.nicename} type={taskPlatforms.type}>
                                                                                 {taskPlatforms.name}
                                                                             </option>
                                                                         ))}
