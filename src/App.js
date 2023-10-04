@@ -232,7 +232,7 @@ function App() {
 
                   {/* Wallet routes  */}
 
-                  <Route
+                  {/* <Route
                     exact
                     path="/wallet/transfer"
                     element={
@@ -240,7 +240,7 @@ function App() {
                         <Transfer />
                       </MustLogin>
                     }
-                  />
+                  /> */}
 
                   <Route
                     exact

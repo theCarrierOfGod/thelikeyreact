@@ -46,7 +46,7 @@ const TaskPage = ({ items }) => {
                                 <h5>
                                     {promotion.title}
                                     <b className="text-info float-end">
-                                        {promotion.cpu - 10}<i className="mdi mdi-coin"></i>
+                                        &#8358;{promotion.cpu - promotion.deduction}
                                     </b>
                                 </h5>
                                 <div style={{ textAlign: 'left' }} className='content' dangerouslySetInnerHTML={{ __html: promotion.description.length > 40 ? `${promotion.description.substring(0, 40)}...` : promotion.description }}></div>

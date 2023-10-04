@@ -88,8 +88,8 @@ const NewTask = () => {
             return;
         }
 
-        if (total > userHook.userDetails['deposited']) {
-            swal("New Task", "Insufficient withdrawable credits!", "error");
+        if (total > userHook.userDetails['balance']) {
+            swal("New Task", "Insufficient balance!", "error");
             return;
         }
 
@@ -152,7 +152,7 @@ const NewTask = () => {
                                                 <div>
                                                     Current purchased credits: &nbsp;
                                                     <strong>
-                                                        {userHook.userDetails.deposited} <span style={{ fontSize: '1rem' }}>(${userHook.depositedBalance  * 0.0015})</span>
+                                                        &#8358;{userHook.earnedBalance}
                                                     </strong>
                                                 </div>
                                                 <div>

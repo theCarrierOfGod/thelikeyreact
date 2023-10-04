@@ -266,14 +266,14 @@ const TestFund = () => {
                                                 INFORMATION
                                             </h4>
                                             <br />
-                                            <strong>Buy Creditable Credits: {userHook.depositedBalance}</strong> <br /> <br />
+                                            <strong>Existing balance: {userHook.balance}</strong> <br /> <br />
                                             <p className="card-description">
-                                                Minimum deposit amount is <b> $ 1</b> which is equal to <b>400 credits</b> <br />
+                                                Minimum deposit amount is <b>&#8358; 400</b> <br />
                                             </p>
                                             <div class="select">
                                                 <select onChange={(e) => setMethod(e.target.value)}>
                                                     <option value={''}>Select payment method</option>
-                                                    <option value={'crypto'}>CRYPTOCURRENCY</option>
+                                                    {/* <option value={'crypto'}>CRYPTOCURRENCY</option> */}
                                                     <option value={'transfer'}>BANK TRANSFER</option>
                                                 </select>
                                             </div>
@@ -553,17 +553,9 @@ const TestFund = () => {
 
                                             <form id="cryptoform" onSubmit={(e) => { PayWithTransfer(e) }}>
                                                 <div className="form-group">
-                                                    <label for="cryptoamount">Amount (USD)</label>
-                                                    <input type="number" min="1"
+                                                    <label for="cryptoamount">Amount</label>
+                                                    <input type="number" min="400"
                                                         name="cryptoamount" className="form-control" value={amount} onChange={(e) => calculateCredits(e)} placeholder="Amount in USD" required id="cryptoamount" />
-                                                    <small className='mt-2' style={{ fontSize: '11px', width: '100%', textAlign: 'right', display: 'block', color: '#002347' }}>
-                                                        {(credits === "" || credits === 0) ? "" : (
-                                                            <>
-                                                                {credits} credits <br />
-                                                                <strong>{hook.rate * amount} NGN</strong> <br />
-                                                            </>
-                                                        )}
-                                                    </small>
                                                 </div>
 
                                                 <div className="form-group">
@@ -573,7 +565,7 @@ const TestFund = () => {
                                                 </div>
 
                                                 <p>
-                                                    Make a transfer of <strong>{hook.rate * amount} NGN</strong> to the bank account below:
+                                                    Make a transfer of <strong>&#8358;{amount}</strong> to the bank account below:
                                                 </p>
                                                 <p>
                                                     <strong>BANK NAME:</strong> Palmpay

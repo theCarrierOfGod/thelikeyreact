@@ -155,13 +155,13 @@ const ViewTask = () => {
                                                                     </div>
                                                                 </p>
 
-                                                                <p className="">
-                                                                    Reward: {task.uniqueTask.cpu - 10} credits
+                                                                <p className="text-info">
+                                                                    Reward: <b>&#8358;{task.uniqueTask.cpu - task.uniqueTask.deduction}</b>
                                                                 </p>
 
                                                                 <div style={{ textAlign: 'left', fontFamily: 'monospace' }} dangerouslySetInnerHTML={{ __html: task.uniqueTask.description }}></div>
                                                                 {task.link === null ? null : (
-                                                                    <p>
+                                                                    <p> <b>LINK: </b><br />
                                                                         <Link to={task.uniqueTask.link} className='mt-2 mb-2' style={{ fontFamily: 'monospace', textTransform: 'lowercase' }}>
                                                                             {task.uniqueTask.link}
                                                                         </Link> <br />

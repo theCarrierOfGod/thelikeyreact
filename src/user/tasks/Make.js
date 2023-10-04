@@ -107,63 +107,6 @@ const Make = () => {
                                     <div className='notification is-info'>
                                         {total} tasks available for you. Scroll down to perform tasks.
                                     </div>
-
-                                    {/* <div className="card mb-2">
-                                        <div className="card-body">
-                                            <form action="" method="get">
-                                                <div className="row">
-                                                    <div className='col-lg-12'>
-                                                        <h5>
-                                                            {total} tasks for you
-                                                        </h5>
-                                                    </div>
-                                                    <div className="col-md-4">
-                                                        <select className="form-select mt-2" id="platform" name="platform" onChange={(e) => { setPlatform(e.target.value); getTypeList(e.target.value); goNow(e.target.value, type, filterLocation) }} defaultValue={platform}>
-                                                            <option value="">Select platform</option>
-                                                            {hook.taskPlatforms.length === 0 ? null : (
-                                                                <>
-                                                                    {hook.taskPlatforms.map((country) => (
-                                                                        <option key={country.nicename} id={country.nicename} value={country.nicename}>
-                                                                            {country.name}
-                                                                        </option>
-                                                                    ))}
-                                                                </>
-                                                            )}
-                                                        </select>
-                                                    </div>
-                                                    <div className="col-md-4">
-                                                        <select className="form-select mt-2" id="type" name="type" onChange={(e) => { setType(e.target.value); goNow(platform, e.target.value, filterLocation); }} defaultValue={type}>
-                                                            <option value="">Select type</option>
-                                                            {hook.promotionTypes.length === 0 ? null : (
-                                                                <>
-                                                                    {hook.promotionTypes.map((promotionType) => (
-                                                                        <option key={promotionType.id} id={promotionType.V} value={promotionType.V}>
-                                                                            {promotionType.D}
-                                                                        </option>
-                                                                    ))}
-                                                                </>
-                                                            )}
-                                                        </select>
-                                                    </div>
-
-                                                    <div className="col-md-4">
-                                                        <select className="form-select mt-2" id="location" name="targetAudience" onChange={(e) => { setFilterLocation(e.target.value); goNow(platform, type, e.target.value); }} defaultValue={filterLocation}>
-                                                            <option value="">Location</option>
-                                                            {hook.countries.length === 0 ? null : (
-                                                                <>
-                                                                    {hook.countries.map((country) => (
-                                                                        <option key={country.iso} id={country.nicename} value={country.nicename}>
-                                                                            {country.name}
-                                                                        </option>
-                                                                    ))}
-                                                                </>
-                                                            )}
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div> */}
                                 </div>
 
                                 <div className='col-lg-12 mb-3'>
@@ -173,13 +116,13 @@ const Make = () => {
                                 </div>
 
                                 <div className="col-md-12 grid-margin stretch-card">
-                                    <div className="card">
+                                    <div className="">
                                         <div className="card-body p-1">
                                             <div className='justify-content-center'>
                                                 {task.isLoading ? (
                                                     <>
                                                         <div className="col-md-12 mt-4">
-                                                            <div className="alert alert-info text-center">
+                                                            <div className="box w-100 text-center" style={{ width: '100%'}}>
                                                                 <i className='fa fa-spinner fa-spin'></i>
                                                             </div>
                                                         </div>

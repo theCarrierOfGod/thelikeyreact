@@ -27,7 +27,6 @@ export const User = ({ children }) => {
     const [promotionCount, setPromotionCount] = useState(0);
     const [performedCount, setPerformedCount] = useState(0);
     const [completed, setCompleted] = useState(0);
-    const [processedBalance, setProcessedBalance] = useState(0);
     const [earnedBalance, setEarnedBalance] = useState(0);
     const [depositedBalance, setDepositedBalance] = useState(0);
     const [facebook, setFacebook] = useState('')
@@ -42,8 +41,7 @@ export const User = ({ children }) => {
             setUserDetails(res.data[0]);
             setUserName(res.data[0].username);
             setDepositedBalance(res.data[0].deposited);
-            setEarnedBalance(res.data[0].earned);
-            setProcessedBalance(res.data[0].processed);
+            setEarnedBalance(res.data[0].balance);
             setUserEmail(res.data[0].email);
             if (res.data[0].facebook_id === null) {
                 setFacebook('')
@@ -92,7 +90,6 @@ export const User = ({ children }) => {
             setUserDetails([]);
             setDepositedBalance(0);
             setEarnedBalance(0);
-            setProcessedBalance(0);
             setUserEmail('user@thelikey.com');
             setFetchingDetails(false)
             setPhoneNumber('');
@@ -319,14 +316,13 @@ export const User = ({ children }) => {
         }
     }
 
-
     useEffect(() => {
         probUserDetails();
 
         return () => {
             probUserDetails();
         }
-    }, [location])
+    }, [location]);
 
     useEffect(() => {
         getUserDetails(auth.userOnline)
@@ -337,7 +333,7 @@ export const User = ({ children }) => {
 
     return (
         <UserContext.Provider value={{
-            userImage, userName, userEmail, userPackage, firstname, lastname, userDetails, facebook, twitter, instagram, phoneNumber, homeActs, taskCount, promotionCount, processedBalance, earnedBalance, depositedBalance, activities, performedCount, tiktok, completed,
+            userImage, userName, userEmail, userPackage, firstname, lastname, userDetails, facebook, twitter, instagram, phoneNumber, homeActs, taskCount, promotionCount, earnedBalance, depositedBalance, activities, performedCount, tiktok, completed,
             getUserDetails, getActivities, getHomeActivities, countPromotions, countTasks, updatePicture, updateSocial, countPerformed, updatePersonal, setUserDetails, countCompleted, updatePassword,
         }}>
             {children}

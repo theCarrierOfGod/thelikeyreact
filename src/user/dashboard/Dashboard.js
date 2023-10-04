@@ -101,45 +101,13 @@ const Dashboard = () => {
                                             <h4 className="font-weight-normal mb-3 text-right">Free Credits
                                             </h4>
                                             <h2 className="mb-2 text-right" style={{ fontSize: '1.5rem' }}>
-                                                {userHook.earnedBalance}
+                                                &#8358;{userHook.earnedBalance}
                                             </h2>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-3 col-sm-6 col-6 stretch-card grid-margin">
-                                    <div className="card bg-success card-img-holder text-white">
-                                        <div className="card-body p-2">
-                                            <img src="/assets/images/dashboard/circle.svg" className="card-img-absolute" alt="CCC" />
-                                            <h4 className="font-weight-normal mb-3 text-right">Withdrawable
-                                            </h4>
-                                            <h2 className="mb-2 text-right" style={{ fontSize: '1.5rem' }}>
-                                                {userHook.depositedBalance} <span style={{ fontSize: '1rem' }}>(${userHook.depositedBalance * 0.0015})</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-md-3 col-sm-6 col-6 stretch-card grid-margin">
-                                    <Link to={'/refer-n-earn'} className="card bg-danger card-img-holder text-white" style={{ textDecoration: 'none' }} >
-                                        <div className="card-body p-2">
-                                            <img src="/assets/images/dashboard/circle.svg" className="card-img-absolute" alt="CCC" />
-                                            <h4 className="font-weight-normal mb-3 text-right">
-                                                <Link to={'/promotion/manage'} className="font-weight-normal mb-3 text-right title is-4" style={{ color: 'white', textDecoration: 'none' }}>Promotions</Link>
-                                            </h4>
-                                            <h2 className="mb-2 text-right" style={{ fontSize: '1.5rem' }}>
-                                                {userHook.promotionCount}
-                                            </h2>
-                                        </div>
-                                    </Link>
-                                </div>
-                                <div className='col-md-12 strech-card grid-margin'>
-                                    <div className='notification is-info is-light p-1' style={{ fontFamily: 'monospace', fontSize: '8px' }}>
-                                        <p>Free credits are used for <strong><Link to="/promotion/new" style={{ textDecoration: 'none' }}>promotions</Link>.</strong></p>
-                                        <p>Withdrawable credits are used for <strong><Link to="/task/new" style={{ textDecoration: 'none' }}>tasks</Link></strong> </p>
-                                        <p>Withdrawable credits can be <strong><Link to="/wallet/transfer" style={{ textDecoration: 'none' }}>transferred</Link></strong>  to free credits.</p>
-                                    </div>
-                                </div>
-                                <div className="col-md-3 col-sm-6 col-6 stretch-card grid-margin">
-                                    <Link to={'/refer-n-earn'} className="card bg-info card-img-holder text-white" style={{ textDecoration: 'none' }} >
+                                    <Link to={'/task/manage'} className="card bg-info card-img-holder text-white" style={{ textDecoration: 'none' }} >
                                         <div className="card-body p-2">
                                             <img src="/assets/images/dashboard/circle.svg" className="card-img-absolute" alt="CCC" />
                                             <h4 className="font-weight-normal mb-3 text-right">
@@ -159,10 +127,17 @@ const Dashboard = () => {
                                                 <Link to={'/wallet/withdraw'} className="font-weight-normal mb-3 text-right title is-4" style={{ color: 'white', textDecoration: 'none' }}>Withdrawn</Link>
                                             </h4>
                                             <h2 className="mb-2 text-right" style={{ fontSize: '1.5rem' }}>
-                                                {0} <span>(${0 / 500})</span>
+                                                &#8358;
                                             </h2>
                                         </div>
                                     </Link>
+                                </div>
+                                <div className='col-md-12 strech-card grid-margin'>
+                                    <div className='notification is-info is-light p-1' style={{ fontFamily: 'monospace', fontSize: '8px' }}>
+                                        <p>Free credits are used for <strong><Link to="/promotion/new" style={{ textDecoration: 'none' }}>promotions</Link>.</strong></p>
+                                        <p>Withdrawable credits are used for <strong><Link to="/task/new" style={{ textDecoration: 'none' }}>tasks</Link></strong> </p>
+                                        <p>Withdrawable credits can be <strong><Link to="/wallet/transfer" style={{ textDecoration: 'none' }}>transferred</Link></strong>  to free credits.</p>
+                                    </div>
                                 </div>
                                 <div className="col-md-3 col-sm-6 col-6 stretch-card grid-margin">
                                     <Link to={'/refer-n-earn'} className="card bg-primary card-img-holder text-white" style={{ textDecoration: 'none' }} >

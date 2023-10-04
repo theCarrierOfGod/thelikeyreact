@@ -32,14 +32,12 @@ const Withdraw = () => {
     const validateCredit = (amount) => {
         setCredit(amount)
 
-        if (Number(amount) > Number(userHook.depositedBalance) || Number(amount) < 1000 || (Number(amount) % 500 !== 0)) {
+        if (Number(amount) > Number(userHook.earnedBalance) || Number(amount) < 2500 || (Number(amount) % 500 !== 0)) {
             setProceed(false);
         } else {
             setProceed(true);
         }
-
-        let USD = (Number(amount) * 0.0015);
-        setAmount(USD);
+        setAmount(amount);
     }
 
     const withdrawNow = (e) => {
@@ -86,10 +84,19 @@ const Withdraw = () => {
     const processBankForm = (e) => {
         e.preventDefault();
 
-        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5) {
+        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5 || amount < 2500)  {
             swal({
                 title: 'Withdraw',
                 text: 'Bank details not complete',
+                icon: 'warning'
+            });
+            return;
+        }
+
+        if (amount < 2500)  {
+            swal({
+                title: 'Withdraw',
+                text: 'Minimum withdrawal is &#8358;2500',
                 icon: 'warning'
             });
             return;
@@ -99,7 +106,7 @@ const Withdraw = () => {
             amount: amount,
             credits: credit,
             walletAddress: `Bank Name: ${bankName}, Account Number: ${accountNumber}, Account Name: ${accountName}`,
-            currency: 'USD',
+            currency: 'NGN',
             network: accountNumber,
             username: auth.userOnline,
         }
@@ -182,7 +189,7 @@ const Withdraw = () => {
                                                 You can only withdraw from your withdrawable credits.
                                                 <br />
                                                 <strong className='is-danger text-danger' style={{ fontFamily: 'monospace' }}>
-                                                    Minimum withdrawal is 1000 credits = $1.5
+                                                    Minimum withdrawal is &#8358;2500
                                                 </strong>
                                                 <br />
                                                 <strong className='is-danger text-danger' style={{ fontFamily: 'monospace' }}>
@@ -198,16 +205,16 @@ const Withdraw = () => {
                                                 </small>
                                             </p>
                                             <h4 className="card-title">
-                                                WITHDRAWABLE CREDITS: {userHook.depositedBalance} <span style={{ fontSize: '1rem' }}>(${userHook.depositedBalance * 0.0015})</span>
+                                                BALANCE: &#8358;{userHook.earnedBalance}
                                             </h4>
                                             <div class="select">
                                                 <select onChange={(e) => setMeans(e.target.value)}>
                                                     <option value={''}>Select withdrawal method</option>
-                                                    <option value={'usdt'}>USDT</option>
-                                                    <option value={'skrill'}>SKRILL</option>
+                                                    {/* <option value={'usdt'}>USDT</option>
+                                                    <option value={'skrill'}>SKRILL</option> */}
                                                     <option value={'account'}>BANK ACCOUNT</option>
-                                                    <option value={'paypal'}>PayPal</option>
-                                                    <option value={'neteller'}>Neteller</option>
+                                                    {/* <option value={'paypal'}>PayPal</option>
+                                                    <option value={'neteller'}>Neteller</option> */}
                                                 </select>
                                             </div>
                                         </div>
@@ -256,10 +263,10 @@ const Withdraw = () => {
                                                             name="accountName" onChange={e => setAccountName(e.target.value)} className="form-control" value={accountName} placeholder="Account Name" required id="accountName" />
                                                     </div>
                                                     <div className="form-group">
-                                                        <label for="credits">Amount (CREDITS)</label>
+                                                        <label for="credits">Amount</label>
                                                         <input
                                                             type="number"
-                                                            min={1}
+                                                            min={2500}
                                                             name="credits"
                                                             className="form-control"
                                                             value={credit}
@@ -271,21 +278,6 @@ const Withdraw = () => {
                                                         <small style={{ color: 'red', fontFamily: 'monospace', fontSize: '12px', fontWeight: 'bolder', textTransform: 'uppercase' }}>
                                                             Amount to be withdrawn must be a multiple of 500
                                                         </small>
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <label for="amount">Amount (USD)</label>
-                                                        <input
-                                                            type="number"
-                                                            min={1}
-                                                            name="amount"
-                                                            className="form-control"
-                                                            value={amount}
-                                                            placeholder="Amount in USD"
-                                                            required
-                                                            id="amount"
-                                                            readOnly={true}
-                                                            disabled={true}
-                                                        />
                                                     </div>
                                                     <div className="d-flex justify-content-right" >
                                                         <button type="submit" id="cryptoproceed" className="btn btn-primary">Proceed</button>

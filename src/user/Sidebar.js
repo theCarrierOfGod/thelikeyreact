@@ -53,7 +53,6 @@ const Sidebar = () => {
                         </Link>
                     </li>
 
-
                     {/* <!-- dashboard  --> */}
 
                     <li className={`nav-item ${location.pathname === "/" ? "active" : ""} border-bottom`}>
@@ -64,33 +63,10 @@ const Sidebar = () => {
                     </li>
 
                     <li class="nav-item border-bottom">
-                        <a class={`nav-link ${location.pathname === "/promotion/new" ? "active" : ""}`} data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                            <i class="mdi mdi-chart-areaspline  menu-icon m-0 p-0"></i> &nbsp; &nbsp;
-                            <span class="menu-title">Promotions</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-basic">
-                            <ul class="nav flex-column sub-menu">
-                                <li className={`nav-item ${location.pathname === "/earn_credits" ? "active" : ""}`}>
-                                    <Link className="nav-link" to="/earn_credits">
-                                        <span className="menu-title">Get free credits</span>
-                                    </Link>
-                                </li>
-                                <li className={`nav-item ${location.pathname === "/promotion/new" ? "active" : ""}`}>
-                                    <Link className="nav-link" to="/promotion/new">
-                                        <span className="menu-title">Add/Manage Promotion</span>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="nav-item border-bottom">
                         <a class={`nav-link ${location.pathname === "/promotion/new" ? "active" : ""}`} data-bs-toggle="collapse" href="#tasks" aria-expanded="false" aria-controls="tasks">
                             <i class="mdi mdi-book-open-page-variant  menu-icon m-0 p-0"></i> &nbsp; &nbsp;
                             <span class="menu-title">Tasks</span>
                             <i class="menu-arrow"></i>
-
                         </a>
                         <div class="collapse" id="tasks">
                             <ul class="nav flex-column sub-menu">
@@ -132,11 +108,11 @@ const Sidebar = () => {
 
                                 {/* <!-- transfer  --> */}
 
-                                <li className={`nav-item ${location.pathname === "/wallet/transfer" ? "active" : ""}`}>
+                                {/* <li className={`nav-item ${location.pathname === "/wallet/transfer" ? "active" : ""}`}>
                                     <Link className="nav-link" to="/wallet/transfer">
                                         <span className="menu-title">Credit Internal transfer</span>
                                     </Link>
-                                </li>
+                                </li> */}
 
                                 {/* <!-- withdraw earnings  --> */}
 
@@ -175,15 +151,6 @@ const Sidebar = () => {
                             <span className="menu-title">How it works</span>
                         </Link>
                     </li>
-
-                    {/* <!-- Contact us  --> */}
-
-                    {/* <li className={`nav-item ${location.pathname === "/contact-us" ? "active" : ""} border-bottom`}>
-                        <Link className="nav-link" to="/contact-us">
-                            <i class="mdi mdi mdi-phone  menu-icon m-0 p-0"></i> &nbsp; &nbsp;
-                            <span className="menu-title">Contact Us</span>
-                        </Link>
-                    </li> */}
 
                     {/* <!-- MLM  --> */}
 
