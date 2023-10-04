@@ -33,6 +33,7 @@ const NewTask = () => {
     const platformHandler = (e) => {
         setSocialMedia(e.target.value)
         alert(e.target.name)
+        console.log(e.target)
 
         if (e.target.value === "custom") {
             document.getElementById('promotionType').setAttribute('disabled', true);
@@ -203,7 +204,7 @@ const NewTask = () => {
                                                                 {hook.taskPlatforms.length === 0 ? null : (
                                                                     <>
                                                                         {hook.taskPlatforms.map((taskPlatforms) => (
-                                                                            <option key={taskPlatforms.id} id={taskPlatforms.nicename} value={taskPlatforms.nicename} name={taskPlatforms.type}>
+                                                                            <option key={taskPlatforms.id} id={taskPlatforms.nicename} value={taskPlatforms.nicename} var={taskPlatforms.type}>
                                                                                 {taskPlatforms.name}
                                                                             </option>
                                                                         ))}
