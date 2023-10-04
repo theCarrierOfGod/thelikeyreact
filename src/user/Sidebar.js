@@ -77,7 +77,12 @@ const Sidebar = () => {
                                 </li>
                                 <li className={`nav-item ${location.pathname === "/task/new" ? "active" : ""}`}>
                                     <Link className="nav-link" to="/task/new">
-                                        <span className="menu-title">Add/Manage Task</span>
+                                        <span className="menu-title">Add Task</span>
+                                    </Link>
+                                </li>
+                                <li className={`nav-item ${location.pathname === "/task/manage" ? "active" : ""}`}>
+                                    <Link className="nav-link" to="/task/manage">
+                                        <span className="menu-title">Manage Tasks</span>
                                     </Link>
                                 </li>
                                 <li className={`nav-item ${location.pathname === "/history/performed" ? "active" : ""}`}>
