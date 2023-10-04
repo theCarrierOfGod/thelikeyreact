@@ -23,8 +23,8 @@ const Upgrade = () => {
     const auth = useAuth();
     const navigate = useNavigate();
     const userHook = useUser();
-    const [amount, setAmount] = useState(1);
-    const [nairaAmount, setNairaAmount] = useState(0);
+    const [amount, setAmount] = useState(2000);
+    const [nairaAmount, setNairaAmount] = useState(2000);
     const [currency, setCurrency] = useState('');
     const [network, setNetwork] = useState('');
     const [credits, setCredits] = useState('');
@@ -86,7 +86,7 @@ const Upgrade = () => {
 
     const PayWithPaystack = (e) => {
         e.preventDefault();
-        if (amount < 5) {
+        if (amount < 2000) {
             return false;
         }
         initializePayment(onSuccess, onClose);
@@ -166,13 +166,13 @@ const Upgrade = () => {
                                             <br />
 
                                             <p className="card-description">
-                                                Cost for account upgrade is <b> $ 1</b> OR <b> &#8358; 2000 </b> <br />
+                                                Cost for account upgrade is <b> &#8358; 2000 </b> <br />
                                             </p>
                                             <div className={userHook.userPackage === 'free' ? 'd-block' : 'd-none'}>
                                                 <div class="select">
                                                     <select onChange={(e) => setMethod(e.target.value)}>
                                                         <option value={''}>Select payment method</option>
-                                                        <option value={'card'}>BANK CARD</option>
+                                                        <option value={'card'}>INTERNET BANKING</option>
                                                     </select>
                                                 </div>
                                             </div>
