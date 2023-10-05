@@ -131,9 +131,9 @@ const NewTask = () => {
 
 
     useEffect(() => {
-        // hook.getAllCountries();
+        calcTotal(cpu, amount)
 
-    }, [location.key])
+    }, [minCPU, cpu, socialMedia, amount])
 
     return (
         <>
