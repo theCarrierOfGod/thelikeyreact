@@ -44,7 +44,8 @@ const NewTask = () => {
             document.getElementById('promotionType').style.display = "none";
             document.getElementById('promotionType2').removeAttribute('disabled');
             document.getElementById('promotionType2').style.display = "block";
-            setMINCPU(20)
+            setMINCPU(20);
+            setCpu(20)
         } else {
             hook.getPlatformPromotions(dvalue);
             document.getElementById('promotionType').removeAttribute('disabled');
@@ -54,8 +55,10 @@ const NewTask = () => {
             document.getElementById('promotionLabel').setAttribute('for', 'promotionType');
             if(variable === "promotion") {
                 setMINCPU(3)
+                setCpu(3)
             } else {
                 setMINCPU(20)
+                setCpu(20)
             }
         }
     }
@@ -290,7 +293,7 @@ const NewTask = () => {
 
                                                     <div className="col-sm-6">
                                                         <div className="form-group">
-                                                            <label htmlFor="amount">Amount</label>
+                                                            <label htmlFor="amount">Quantity</label>
                                                             <input type={'number'} className="form-control" name="amount" id="amount" value={amount} min={5} onChange={(e) => calcTotal(cpu, e.target.value)} required placeholder='Minimum amount is 5' />
                                                         </div>
                                                     </div>
