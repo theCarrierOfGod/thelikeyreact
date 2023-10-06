@@ -32,7 +32,7 @@ const Withdraw = () => {
     const validateCredit = (amount) => {
         setCredit(amount)
 
-        if (Number(amount) > Number(userHook.earnedBalance) || Number(amount) < 1000 || (Number(amount) % 500 !== 0)) {
+        if (Number(amount) > Number(userHook.earnedBalance) || Number(amount) < 1000 || (Number(amount) % 1000 !== 0)) {
             setProceed(false);
         } else {
             setProceed(true);
@@ -186,14 +186,12 @@ const Withdraw = () => {
                                                 WITHDRAW YOUR EARNINGS
                                             </h4>
                                             <p className="card-description">
-                                                You can only withdraw from your withdrawable credits.
-                                                <br />
                                                 <strong className='is-danger text-danger' style={{ fontFamily: 'monospace' }}>
                                                     Minimum withdrawal is &#8358;1000
                                                 </strong>
                                                 <br />
-                                                <strong className='is-danger text-danger' style={{ fontFamily: 'monospace' }}>
-                                                    Amount to be withdrawn must be a multiple of 500 i.e. 1000, 1500, 2000 e.t.c.
+                                                <strong className='is-danger text-info' style={{ fontFamily: 'monospace' }}>
+                                                    Amount to be withdrawn must be a multiple of 1000 i.e. 1000, 2000, 3000 e.t.c.
                                                 </strong>
                                                 <br />
                                                 <small
@@ -218,13 +216,6 @@ const Withdraw = () => {
                                                 </select>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div className='col-lg-12 mb-2'>
-                                    <div className='notification is-info is-light'>
-                                        Payouts are issued on the 21st to 23rd of each month! <br />
-                                        Withdrawal requests must be made before then.
                                     </div>
                                 </div>
 
@@ -276,7 +267,7 @@ const Withdraw = () => {
                                                             id="credits"
                                                         />
                                                         <small style={{ color: 'red', fontFamily: 'monospace', fontSize: '12px', fontWeight: 'bolder', textTransform: 'uppercase' }}>
-                                                            Amount to be withdrawn must be a multiple of 500
+                                                            Amount to be withdrawn must be a multiple of 1000
                                                         </small>
                                                     </div>
                                                     <div className="d-flex justify-content-right" >
