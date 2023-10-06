@@ -36,7 +36,8 @@ const NewTask = () => {
         var Arr = res.split(",");
         let dvalue = Arr[0];
         let variable = Arr[1];
-        setSocialMedia(dvalue)
+        setSocialMedia(dvalue);
+        setTaskType(variable);
 
         if (dvalue === "custom") {
             document.getElementById('promotionType').setAttribute('disabled', true);
