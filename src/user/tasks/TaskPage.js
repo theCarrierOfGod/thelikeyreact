@@ -11,7 +11,6 @@ const TaskPage = ({ items }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const currentItems = items.slice(itemOffset, endOffset);
 
-
     const handleNext = () => {
         if (pageCount !== currentPage) {
             setCurrentPage(currentPage + 1);

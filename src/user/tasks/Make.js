@@ -69,7 +69,7 @@ const Make = () => {
     }, [location.key]);
 
     setTimeout(() => {
-        if(task.tasksToDo.length === 0) {
+        if (task.tasksToDo.length === 0) {
             getTasksToDo(window.localStorage.getItem('username'));
         }
     }, 2000);
@@ -127,9 +127,11 @@ const Make = () => {
                                             <div className='justify-content-center'>
                                                 {task.isLoading ? (
                                                     <>
-                                                        <div className="col-md-12 mt-4">
-                                                            <div className="box w-100 text-center" style={{ width: '100%'}}>
-                                                                <i className='fa fa-spinner fa-spin'></i>
+                                                        <div className='row'>
+                                                            <div className="col-md-12 mt-4">
+                                                                <div className="box w-100 text-center" style={{ width: '100%' }}>
+                                                                    <i className='fa fa-spinner fa-spin'></i> Loading your tasks. Please wait
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </>
