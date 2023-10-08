@@ -31,7 +31,7 @@ const Make = () => {
     }
 
     const goNow = (platform, type, location) => {
-        task.getTasksToDo(auth.userOnline, platform, type, location);
+        task.getTasksToDo(window.localStorage.getItem('username'), platform, type, location);
     }
 
     const getTasksToDo = async (username) => {
@@ -66,7 +66,14 @@ const Make = () => {
         return () => {
             return true;
         }
-    }, [location.key])
+    }, [location.key]);
+
+    setTimout(() => {
+        if(total === 0) {
+            getTasksToDo(window.localStorage.getItem('username'));
+        }
+    }, 2000);
+
 
     return (
         <>

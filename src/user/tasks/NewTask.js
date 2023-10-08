@@ -80,11 +80,20 @@ const NewTask = () => {
     }
 
     const isValidUrl = (urlString) => {
-        if (urlString.length > 5) {
-            setLinkErr(false)
+        if(taskType === "promotion") {
+            if (urlString.includes(socialMedia) && urlString.includes('http')) {
+                setLinkErr(false)
+            } else {
+                setLinkErr(true)
+                return false;
+            }
         } else {
-            setLinkErr(true)
-            return false;
+            if (urlString.length > 6) {
+                setLinkErr(false)
+            } else {
+                setLinkErr(true)
+                return false;
+            }
         }
     }
 
