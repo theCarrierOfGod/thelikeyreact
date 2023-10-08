@@ -68,8 +68,8 @@ const Make = () => {
         }
     }, [location.key]);
 
-    setTimout(() => {
-        if(total === 0) {
+    setTimeout(() => {
+        if(task.tasksToDo.length === 0) {
             getTasksToDo(window.localStorage.getItem('username'));
         }
     }, 2000);
