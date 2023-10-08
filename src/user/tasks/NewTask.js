@@ -27,7 +27,7 @@ const NewTask = () => {
     const [minCPU, setMINCPU] = useState(3);
     const [cpu, setCpu] = useState(20)
     const [total, setTotal] = useState(cpu * amount);
-    const [linkErr, setLinkErr] = useState(false);
+    const [linkErr, setLinkErr] = useState('');
     const [taskType, setTaskType] = useState('');
 
 
@@ -54,7 +54,7 @@ const NewTask = () => {
             document.getElementById('promotionType2').setAttribute('disabled', true);
             document.getElementById('promotionType2').style.display = "none";
             document.getElementById('promotionLabel').setAttribute('for', 'promotionType');
-            if(variable === "promotion") {
+            if (variable === "promotion") {
                 setMINCPU(3)
                 setCpu(3)
             } else {
@@ -80,18 +80,27 @@ const NewTask = () => {
     }
 
     const isValidUrl = (urlString) => {
-        if(taskType === "promotion") {
-            if (urlString.includes(socialMedia) && urlString.includes('http')) {
-                setLinkErr(false)
+        if (taskType === "promotion") {
+            if (socialMedia === "twitter") {
+                if (urlString.includes(socialMedia) || urlString.includes('x') && urlString.includes('http') && urlString.includes('.')) {
+                    setLinkErr('')
+                } else {
+                    setLinkErr(`Link must be in the format: https://${socialMedia}.com`)
+                    return false;
+                }
             } else {
-                setLinkErr(true)
-                return false;
+                if (urlString.includes(socialMedia) && urlString.includes('http') && urlString.includes('.')) {
+                    setLinkErr('')
+                } else {
+                    setLinkErr(`Link must be in the format: https://${socialMedia}.com`)
+                    return false;
+                }
             }
         } else {
-            if (urlString.length > 6) {
-                setLinkErr(false)
+            if (urlString.length > 6 && urlString.includes('http') && urlString.includes('.')) {
+                setLinkErr('')
             } else {
-                setLinkErr(true)
+                setLinkErr(`Link must be a valid url`)
                 return false;
             }
         }
@@ -99,8 +108,34 @@ const NewTask = () => {
 
     const newForm = (e) => {
         e.preventDefault();
-        if (isValidUrl(weblink)) {
-            return;
+
+        if(linkErr) {
+            swal("New Task", linkErr, "error");
+        }
+
+        if (taskType === "promotion") {
+            if (socialMedia === "twitter") {
+                if (weblink.includes(socialMedia) || weblink.includes('x') && weblink.includes('http') && weblink.includes('.')) {
+                    setLinkErr('')
+                } else {
+                    setLinkErr(`Link must be in the format: https://${socialMedia}.com`)
+                    return false;
+                }
+            } else {
+                if (weblink.includes(socialMedia) && weblink.includes('http') && weblink.includes('.')) {
+                    setLinkErr('')
+                } else {
+                    setLinkErr(`Link must be in the format: https://${socialMedia}.com`)
+                    return false;
+                }
+            }
+        } else {
+            if (weblink.length > 6 && weblink.includes('http') && weblink.includes('.')) {
+                setLinkErr('')
+            } else {
+                setLinkErr(`Link must be a valid url`)
+                return false;
+            }
         }
 
         if (total === 0) {
@@ -110,6 +145,11 @@ const NewTask = () => {
 
         if (amount === 0) {
             swal("New Task", "Minimum amount not reached!", "error");
+            return;
+        }
+
+        if (details === 0) {
+            swal("New Task", "Description can't be empty", "error");
             return;
         }
 
@@ -278,7 +318,10 @@ const NewTask = () => {
                                                         <div className="form-group">
                                                             <label htmlFor="weblink">Weblink</label>
                                                             <input type={'text'} className="form-control" name="weblink" id="weblink" value={weblink} onChange={(e) => { isValidUrl(e.target.value); setWeblink(e.target.value) }} required placeholder="https://..." />
-                                                            <small className={linkErr ? 'd-block w-100' : 'd-none'}>
+                                                            <small className={linkErr.length > 0 ? 'd-block w-100 text-danger' : 'd-none'}>
+                                                                <b>
+                                                                    {linkErr}
+                                                                </b>
                                                             </small>
                                                         </div>
                                                     </div>
@@ -313,7 +356,7 @@ const NewTask = () => {
                                                             <label htmlFor="cpu">Cost per user</label>
                                                             <select className="form-select p-2" id="cpu" name="cpu" required defaultChecked={minCPU} onChange={(e) => calcTotal(e.target.value, amount)}>
                                                                 {cpus.map((cost) => (
-                                                                    <option key={cost} id={cost} value={cost} selected={cpu===cost}>
+                                                                    <option key={cost} id={cost} value={cost} selected={cpu === cost}>
                                                                         {cost}
                                                                     </option>
                                                                 ))}
