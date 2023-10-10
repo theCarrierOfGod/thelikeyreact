@@ -40,7 +40,7 @@ const TaskPage = ({ items }) => {
             <div className="row">
                 {currentItems.map((promotion, index) => (
                     <div className='col-md-4 col-sm-6 col-12 mb-3'>
-                        <div className="card p-2 " key={index} style={{ border: "1px solid rgba(0, 0, 0, 0.125)" }}>
+                        <div className="card p-2" key={index} style={{ border: "1px solid rgba(0, 0, 0, 0.125)" }}>
                             <div className="card-content p-0 text-center">
                                 <h5>
                                     {promotion.title}

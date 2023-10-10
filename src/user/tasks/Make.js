@@ -122,7 +122,6 @@ const Make = () => {
                                 </div>
 
                                 <div className="col-md-12 grid-margin stretch-card">
-                                    <div className="">
                                         <div className="card-body p-1">
                                             <div className='justify-content-center'>
                                                 {task.isLoading ? (
@@ -155,7 +154,6 @@ const Make = () => {
                                                 )}
                                             </div>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
                             <marquee>Activities are being monitored!
