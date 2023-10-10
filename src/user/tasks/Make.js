@@ -23,7 +23,6 @@ const Make = () => {
     const [type, setType] = useState('');
     const [total, setTotal] = useState('');
 
-
     const getTypeList = (platform) => {
         if (platform !== "") {
             hook.getPlatformPromotions(platform);
@@ -105,55 +104,57 @@ const Make = () => {
 
                             <div className="row">
                                 <Pick />
-                                <div className="col-md-12 mb-2">
-                                    <div className={(userHook.userPackage === 'free' ? "notification is-info is-light mb-4" : "d-none")}>
+                                <div className="col-md-12 grid-margin stretch-card">
+                                    <div className={(userHook.userPackage === 'free' ? "notification is-info is-light" : "d-none")}>
                                         Users on the free package can perfom only 10 free tasks per day. <Link to={'/package/upgrade'}><strong>Upgrade Account to do more tasks</strong></Link>
                                     </div>
+                                </div>
 
-                                    <div className='notification is-info'>
+                                <div className='col-lg-12 grid-margin stretch-card'>
+                                    <div className='notification is-info is-light'>
                                         {total} tasks available for you. Scroll down to perform tasks.
                                     </div>
                                 </div>
 
-                                <div className='col-lg-12 mb-3'>
+                                <div className='col-lg-12 grid-margin stretch-card'>
                                     <div className='notification is-info is-light'>
                                         Do you want to post your own tasks? <Link to={'/task/new'}><b>Click here!</b></Link>
                                     </div>
                                 </div>
 
                                 <div className="col-md-12 grid-margin stretch-card">
-                                        <div className="card-body p-1">
-                                            <div className='justify-content-center'>
-                                                {task.isLoading ? (
-                                                    <>
-                                                        <div className='row'>
-                                                            <div className="col-lg-12">
-                                                                <div className="box w-100 text-center" style={{ width: '100%' }}>
-                                                                    <i className='fa fa-spinner fa-spin'></i> Loading your tasks. Please wait
-                                                                </div>
+                                    <div className="card-body p-1">
+                                        <div className='justify-content-center'>
+                                            {task.isLoading ? (
+                                                <>
+                                                    <div className='row'>
+                                                        <div className="col-lg-12">
+                                                            <div className="box w-100 text-center" style={{ width: '100%' }}>
+                                                                <i className='fa fa-spinner fa-spin'></i> Loading your tasks. Please wait
                                                             </div>
                                                         </div>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        {task.tasksToDo.length === 0 ? (
-                                                            <>
-                                                                <div className="col-md-12 mt-4">
-                                                                    <div className="alert alert-danger text-center">
-                                                                        <i className='fa fa-info-circle'></i> <strong>No task.</strong>
-                                                                    </div>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    {task.tasksToDo.length === 0 ? (
+                                                        <>
+                                                            <div className="col-md-12 mt-4">
+                                                                <div className="alert alert-danger text-center">
+                                                                    <i className='fa fa-info-circle'></i> <strong>No task.</strong>
                                                                 </div>
-                                                            </>
-                                                        ) : (
-                                                            null
-                                                        )}
-                                                    </>
-                                                )}
-                                                {task.tasksToDo.length === 0 ? null : (
-                                                    <TaskPage items={task.tasksToDo} />
-                                                )}
-                                            </div>
+                                                            </div>
+                                                        </>
+                                                    ) : (
+                                                        null
+                                                    )}
+                                                </>
+                                            )}
+                                            {task.tasksToDo.length === 0 ? null : (
+                                                <TaskPage items={task.tasksToDo} />
+                                            )}
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                             <marquee>Activities are being monitored!

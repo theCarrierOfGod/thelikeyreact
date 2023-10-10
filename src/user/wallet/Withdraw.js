@@ -191,7 +191,7 @@ const Withdraw = () => {
                                                 </strong>
                                                 <br />
                                                 <strong className='is-danger text-info' style={{ fontFamily: 'monospace' }}>
-                                                    Amount to be withdrawn must be a multiple of 500 i.e. 500, 2000, 3000 e.t.c.
+                                                    Amount to be withdrawn must be a multiple of 500 i.e.  &#8358;500,  &#8358;1000,  &#8358;1500, &#8358;2000 e.t.c.
                                                 </strong>
                                                 <br />
                                                 <small
@@ -208,11 +208,7 @@ const Withdraw = () => {
                                             <div class="select">
                                                 <select onChange={(e) => setMeans(e.target.value)}>
                                                     <option value={''}>Select withdrawal method</option>
-                                                    {/* <option value={'usdt'}>USDT</option>
-                                                    <option value={'skrill'}>SKRILL</option> */}
                                                     <option value={'account'}>BANK ACCOUNT</option>
-                                                    {/* <option value={'paypal'}>PayPal</option>
-                                                    <option value={'neteller'}>Neteller</option> */}
                                                 </select>
                                             </div>
                                         </div>
