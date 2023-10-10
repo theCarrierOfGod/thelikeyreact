@@ -107,7 +107,7 @@ const Make = () => {
                                 <Pick />
                                 <div className="col-md-12 mb-2">
                                     <div className={(userHook.userPackage === 'free' ? "notification is-info is-light mb-4" : "d-none")}>
-                                        Users on the free package can perfom only 10 free tasks per day. <Link to={'/package/upgrade'}><strong>Upgrade NOW!</strong></Link>
+                                        Users on the free package can perfom only 10 free tasks per day. <Link to={'/package/upgrade'}><strong>Upgrade Account to do more tasks</strong></Link>
                                     </div>
 
                                     <div className='notification is-info'>
