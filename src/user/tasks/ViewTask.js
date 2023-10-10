@@ -141,7 +141,7 @@ const ViewTask = () => {
                                                             <div className={(task.uniqueTask.status !== "active") ? 'd-none' : 'd-block'}>
 
                                                                 <div className={`${(userHook.userPackage === 'free' && task.uniqueTask.cpu > 21) ? 'd-block notification is-warning p-1' : 'd-none'}`}>
-                                                                    Users on the free package cannot perform tasks with CPU above 10 credits. <Link to={'/account/upgrade'}><b>UPGRADE NOW!</b></Link>
+                                                                    Users on the free package cannot perform tasks with CPU above &#8358;10. <Link to={'/account/upgrade'}><b>UPGRADE NOW!</b></Link>
                                                                 </div>
 
                                                                 <span className={`${(userHook.userDetails.location === task.uniqueTask.location || task.uniqueTask.location === 'Worldwide') ? 'd-none' : 'd-block notification is-warning is-light'}`} >

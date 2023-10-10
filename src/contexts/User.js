@@ -41,7 +41,7 @@ export const User = ({ children }) => {
             const res = await axios.get(`${hook.endpoint}/user/${username}`);
             setUserDetails(res.data[0]);
             setUserName(res.data[0].username);
-            setDepositedBalance(res.data[0].deposited);
+            setDepositedBalance(Math.round(res.data[0].balance));
             setEarnedBalance(Math.round(res.data[0].balance));
             setWithdrawn(Math.round(res.data[0].withdrawn));
             setUserEmail(res.data[0].email);

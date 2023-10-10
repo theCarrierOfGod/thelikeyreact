@@ -32,7 +32,7 @@ const Withdraw = () => {
     const validateCredit = (amount) => {
         setCredit(amount)
 
-        if (Number(amount) > Number(userHook.earnedBalance) || Number(amount) < 1000 || (Number(amount) % 1000 !== 0)) {
+        if (Number(amount) > Number(userHook.earnedBalance) || Number(amount) < 500 || (Number(amount) % 500 !== 0)) {
             setProceed(false);
         } else {
             setProceed(true);
@@ -84,7 +84,7 @@ const Withdraw = () => {
     const processBankForm = (e) => {
         e.preventDefault();
 
-        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5 || amount < 1000)  {
+        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5 || amount < 500)  {
             swal({
                 title: 'Withdraw',
                 text: 'Bank details not complete',
@@ -93,10 +93,10 @@ const Withdraw = () => {
             return;
         }
 
-        if (amount < 1000)  {
+        if (amount < 500)  {
             swal({
                 title: 'Withdraw',
-                text: 'Minimum withdrawal is &#8358;1000',
+                text: 'Minimum withdrawal is &#8358;500',
                 icon: 'warning'
             });
             return;
@@ -187,11 +187,11 @@ const Withdraw = () => {
                                             </h4>
                                             <p className="card-description">
                                                 <strong className='is-danger text-danger' style={{ fontFamily: 'monospace' }}>
-                                                    Minimum withdrawal is &#8358;1000
+                                                    Minimum withdrawal is &#8358;500
                                                 </strong>
                                                 <br />
                                                 <strong className='is-danger text-info' style={{ fontFamily: 'monospace' }}>
-                                                    Amount to be withdrawn must be a multiple of 1000 i.e. 1000, 2000, 3000 e.t.c.
+                                                    Amount to be withdrawn must be a multiple of 500 i.e. 500, 2000, 3000 e.t.c.
                                                 </strong>
                                                 <br />
                                                 <small
@@ -219,7 +219,7 @@ const Withdraw = () => {
                                     </div>
                                 </div>
 
-                                <div className={Number(userHook.depositedBalance) < 1000 ? "d-block" : "d-none"} >
+                                <div className={Number(userHook.depositedBalance) < 500 ? "d-block" : "d-none"} >
                                     <div className='col-lg-12'>
                                         <div className='notification is-warning is-light'>
                                             You are not eligible to perform cash withdrawal! <br />
@@ -228,7 +228,7 @@ const Withdraw = () => {
                                     </div>
                                 </div>
 
-                                <div className={Number(userHook.depositedBalance) > 1000 ? "d-block" : "d-none"} >
+                                <div className={Number(userHook.depositedBalance) > 500 ? "d-block" : "d-none"} >
                                     <div className={` ${means === "account" ? "" : "d-none"} col-md-5 grid-margin stretch-card`}>
                                         <div className="card">
                                             <div className="card-body">
@@ -257,7 +257,7 @@ const Withdraw = () => {
                                                         <label for="credits">Amount</label>
                                                         <input
                                                             type="number"
-                                                            min={1000}
+                                                            min={500}
                                                             name="credits"
                                                             className="form-control"
                                                             value={credit}
@@ -267,7 +267,7 @@ const Withdraw = () => {
                                                             id="credits"
                                                         />
                                                         <small style={{ color: 'red', fontFamily: 'monospace', fontSize: '12px', fontWeight: 'bolder', textTransform: 'uppercase' }}>
-                                                            Amount to be withdrawn must be a multiple of 1000
+                                                            Amount to be withdrawn must be a multiple of 500
                                                         </small>
                                                     </div>
                                                     <div className="d-flex justify-content-right" >

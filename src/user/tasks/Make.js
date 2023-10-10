@@ -107,7 +107,7 @@ const Make = () => {
                                 <Pick />
                                 <div className="col-md-12 mb-2">
                                     <div className={(userHook.userPackage === 'free' ? "notification is-info is-light mb-4" : "d-none")}>
-                                        Users on the free package can perfom only 5 of <b>10 Credits</b> tasks per day. <Link to={'/package/upgrade'}><strong>Upgrade NOW!</strong></Link>
+                                        Users on the free package can perfom only 15 tasks of <b>&#8358;10</b> per day. <Link to={'/package/upgrade'}><strong>Upgrade NOW!</strong></Link>
                                     </div>
 
                                     <div className='notification is-info'>
@@ -128,7 +128,7 @@ const Make = () => {
                                                 {task.isLoading ? (
                                                     <>
                                                         <div className='row'>
-                                                            <div className="col-md-12 mt-4">
+                                                            <div className="col-lg-12">
                                                                 <div className="box w-100 text-center" style={{ width: '100%' }}>
                                                                     <i className='fa fa-spinner fa-spin'></i> Loading your tasks. Please wait
                                                                 </div>

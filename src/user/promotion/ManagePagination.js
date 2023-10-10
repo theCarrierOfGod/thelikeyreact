@@ -97,7 +97,7 @@ const ManagePagination = ({ items, perpage, type }) => {
                                                     </b>
                                                 </td>
                                                 <td>
-                                                    {promotion.total_cost} credits
+                                                    &#8358;{promotion.total_cost - promotion.deduction}
                                                 </td>
                                             </tr>
                                         ) : null}
