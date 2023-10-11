@@ -22,7 +22,7 @@ const Dashboard = () => {
 
     const getDownline = async () => {
         try {
-            const res = await axios.get(`${hook.endpoint}/downlines/${auth.userOnline}`);
+            const res = await axios.get(`${hook.endpoint}/downlines/${window.localStorage.getItem('username')}`);
             if (res.data) {
                 setRefs(res.data);
             }
@@ -33,13 +33,13 @@ const Dashboard = () => {
 
     const getNow = () => {
         getDownline();
-        userHook.getHomeActivities(auth.userOnline);
-        userHook.countPerformed(auth.userOnline);
-        userHook.countCompleted(auth.userOnline);
-        userHook.countPromotions(auth.userOnline);
-        userHook.countTasks(auth.userOnline);
-        walletHook.withdrawalHistory(auth.userOnline)
-        walletHook.fundingHistory(auth.userOnline)
+        userHook.getHomeActivities(window.localStorage.getItem('username'));
+        userHook.countPerformed(window.localStorage.getItem('username'));
+        userHook.countCompleted(window.localStorage.getItem('username'));
+        userHook.countPromotions(window.localStorage.getItem('username'));
+        userHook.countTasks(window.localStorage.getItem('username'));
+        walletHook.withdrawalHistory(window.localStorage.getItem('username'))
+        walletHook.fundingHistory(window.localStorage.getItem('username'))
         setAd(hook.pickAd())
     }
 

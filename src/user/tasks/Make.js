@@ -104,6 +104,7 @@ const Make = () => {
 
                             <div className="row">
                                 <Pick />
+
                                 <div className="col-md-12 grid-margin stretch-card">
                                     <div className={(userHook.userPackage === 'free' ? "notification is-info is-light" : "d-none")}>
                                         Users on the free package can perfom only 10 free tasks per day. <Link to={'/package/upgrade'}><strong>Upgrade Account to do more tasks</strong></Link>
@@ -157,8 +158,10 @@ const Make = () => {
                                     </div>
                                 </div>
                             </div>
-                            <marquee>Activities are being monitored!
-                                Earning without performing tasks will lead to account's permanent suspension. <strong>Take Note</strong></marquee>
+                            <marquee>
+                                Activities are being monitored!
+                                Earning without performing tasks will lead to account's permanent suspension. <strong>Take Note</strong>
+                            </marquee>
                         </div>
                     </div >
                 </div >
