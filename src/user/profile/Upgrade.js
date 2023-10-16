@@ -23,8 +23,8 @@ const Upgrade = () => {
     const auth = useAuth();
     const navigate = useNavigate();
     const userHook = useUser();
-    const [amount, setAmount] = useState(2000);
-    const [nairaAmount, setNairaAmount] = useState(2000);
+    const [amount, setAmount] = useState(1500);
+    const [nairaAmount, setNairaAmount] = useState(1500);
     const [currency, setCurrency] = useState('');
     const [network, setNetwork] = useState('');
     const [credits, setCredits] = useState('');
@@ -187,7 +187,7 @@ const Upgrade = () => {
                                             <br />
 
                                             <p className="card-description">
-                                                Cost for account upgrade is <b> &#8358; 2000 </b> <br />
+                                                Cost for account upgrade is <b> &#8358; 1500 </b> <br />
                                             </p>
                                             <div className={userHook.userPackage === 'free' ? 'd-block' : 'd-none'}>
                                                 <div class="select">
@@ -262,7 +262,7 @@ const Upgrade = () => {
                                             <form id="cryptoform" onSubmit={(e) => { PayWithTransfer(e) }}>
                                                 <div className="form-group">
                                                     <label for="cryptoamount">Amount</label>
-                                                    <input type="number" min="200"
+                                                    <input type="number" min="1500"
                                                         name="cryptoamount" className="form-control" value={amount} placeholder="Amount" required id="cryptoamount" />
                                                 </div>
 
