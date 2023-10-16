@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useState } from 'react'
 import { useTask } from '../../contexts/Tasks'
 import { Helmet } from 'react-helmet'
-import ManagePagination from '../promotion/ManagePagination'
+import ManageTaskPagination from './ManageTaskPagination'
 
 const ManageTasks = () => {
     const userHook = useUser();
@@ -24,7 +24,7 @@ const ManageTasks = () => {
     const filterTasks = (e) => {
         e.preventDefault();
         tasks.getMyTasks(auth.userOnline, status);
-    } 
+    }
 
     useEffect(() => {
         getNow();
@@ -112,7 +112,7 @@ const ManageTasks = () => {
                                 </>
                             ) : (
                                 <div className='row'>
-                                    <ManagePagination items={tasks.myTasks} perpage={6} type={'task'} />
+                                    <ManageTaskPagination items={tasks.myTasks} perpage={6} type={'task'} />
                                 </div>
                             )}
                         </div>
