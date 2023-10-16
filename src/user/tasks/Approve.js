@@ -255,9 +255,19 @@ const Approve = () => {
                                                                             {task.uniqueTask.status}
                                                                         </td>
                                                                     </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <b>
+                                                                                Verified by Admin? 
+                                                                            </b>
+                                                                        </td>
+                                                                        <td>
+                                                                            {task.uniqueTask.verified === '1' ? 'Yes' : 'No'}
+                                                                        </td>
+                                                                    </tr>
                                                                 </tbody>
                                                             </table>
-                                                            <button
+                                                            {/* <button
                                                                 className='button is-success'
                                                                 onClick={() => {
                                                                     swal({
@@ -281,7 +291,7 @@ const Approve = () => {
                                                                 }}
                                                             >
                                                                 Approve all proofs
-                                                            </button>
+                                                            </button> */}
                                                         </>
                                                     )}
                                                 </>
@@ -304,150 +314,6 @@ const Approve = () => {
                                             </>
                                         ) : null}
                                     </>
-                                )}
-                                {task.proofs.length === 0 ? null : (
-                                    <div className='row'>
-                                        {task.proofs.map((proof) => (
-                                            <>
-                                                <div className="col-lg-12">
-                                                    <div className="card-body p-2">
-                                                        <div className='card-columns'>
-                                                            {JSON.parse(proof.proofURL).map((image) => (
-                                                                <div className="card">
-                                                                    <img src={image} style={{ width: '100%', marginTop: '2px' }} alt={'proof '} />
-                                                                </div>
-                                                            ))}
-                                                        </div>
-                                                        <table className="table">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <b>
-                                                                            Uploaded by:
-                                                                        </b>
-                                                                    </td>
-                                                                    <td>
-                                                                        {proof.proofBy}
-                                                                    </td>
-                                                                </tr>
-                                                                {proof.details !== null ? (
-                                                                    <>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <b>
-                                                                                    Details
-                                                                                </b>
-                                                                            </td>
-                                                                            <td>
-                                                                                {proof.details}
-                                                                            </td>
-                                                                        </tr>
-                                                                    </>
-                                                                ) : null}
-
-                                                                <tr>
-                                                                    <td>
-                                                                        <b>
-                                                                            Status
-                                                                        </b>
-                                                                    </td>
-                                                                    <td>
-                                                                        {proof.status}
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    {proof.status === "pending" ? (
-                                                                        <>
-                                                                            <td>
-                                                                                <button
-                                                                                    className='button is-success'
-                                                                                    onClick={() => {
-                                                                                        swal({
-                                                                                            title: 'Approve Proof',
-                                                                                            text: 'Do you really want to proceed?',
-                                                                                            icon: 'warning',
-                                                                                            buttons: ["Stop", "Yes, Proceed!"],
-                                                                                        })
-                                                                                            .then((res) => {
-                                                                                                if (res) {
-                                                                                                    approveProof(proof.id)
-                                                                                                } else {
-                                                                                                    swal({
-                                                                                                        title: 'Approve Proof',
-                                                                                                        text: 'Cancelled by user',
-                                                                                                        icon: 'error',
-                                                                                                        timer: 2000
-                                                                                                    })
-                                                                                                }
-                                                                                            })
-                                                                                    }}
-                                                                                >
-                                                                                    Approve
-                                                                                </button>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <button
-                                                                                    className='button is-danger'
-                                                                                    onClick={() => {
-                                                                                        swal({
-                                                                                            title: "Reason for rejection",
-                                                                                            icon: 'warning',
-                                                                                            content: {
-                                                                                                element: "input",
-                                                                                                attributes: {
-                                                                                                    placeholder: "Specify reason for rejection",
-                                                                                                    type: "text",
-                                                                                                },
-                                                                                                showCancelButton: true,
-                                                                                                closeOnConfirm: false,
-                                                                                                animation: "slide-from-top",
-                                                                                            },
-                                                                                        })
-                                                                                            .then((value) => {
-                                                                                                if (value.length === 0) {
-                                                                                                    swal({
-                                                                                                        text: 'Process Teminated',
-                                                                                                        icon: 'error'
-                                                                                                    })
-                                                                                                } else {
-                                                                                                    rejectProof(proof.id, value)
-                                                                                                    swal({
-                                                                                                        text: value,
-                                                                                                        icon: "success",
-                                                                                                    })
-                                                                                                }
-                                                                                            })
-                                                                                    }}
-                                                                                >
-                                                                                    Reject
-                                                                                </button>
-                                                                            </td>
-
-                                                                        </>
-                                                                    ) : null}
-                                                                </tr>
-                                                                {proof.reason !== null ? (
-                                                                    <>
-                                                                        <tr>
-                                                                            <td>
-                                                                                <b>
-                                                                                    Reason
-                                                                                </b>
-                                                                            </td>
-                                                                            <td>
-                                                                                {proof.reason}
-                                                                            </td>
-                                                                        </tr>
-                                                                    </>
-                                                                ) : null}
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </>
-                                        ))}
-                                    </div>
                                 )}
                             </div>
                         </div>
