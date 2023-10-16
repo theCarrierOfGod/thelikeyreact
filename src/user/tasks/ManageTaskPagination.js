@@ -97,7 +97,7 @@ const ManageTaskPagination = ({ items, perpage, type }) => {
                                                     </b>
                                                 </td>
                                                 <td>
-                                                    &#8358;{promotion.total_cost - promotion.deduction}
+                                                    &#8358;{promotion.total_cost}
                                                 </td>
                                             </tr>
                                         ) : null}
@@ -126,13 +126,6 @@ const ManageTaskPagination = ({ items, perpage, type }) => {
                                     </tbody>
                                 </table>
                                 <div className="d-flex justify-content-end mt-2">
-                                    {type === 'task' ? (
-                                        <>
-                                            <Link to={`/${type}/view/${promotion.unique_id}/creator`} type=" button" className="btn btn-info m-2 p-2">
-                                                View Progress
-                                            </Link>
-                                        </>
-                                    ) : null}
                                     {type !== "performed" ? (
                                         <Link to={`/${type}/manage/${promotion.unique_id}`} type=" button" className="btn btn-info m-2 p-2">
                                             Edit
