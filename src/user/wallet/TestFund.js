@@ -186,7 +186,7 @@ const TestFund = () => {
                                             <div class="select">
                                                 <select onChange={(e) => setMethod(e.target.value)}>
                                                     <option value={''}>Select payment method</option>
-                                                    <option value={'card'}>INTERNET BANKING</option>
+                                                    {/* <option value={'card'}>INTERNET BANKING</option> */}
                                                     <option value={'transfer'}>BANK TRANSFER</option>
                                                 </select>
                                             </div>

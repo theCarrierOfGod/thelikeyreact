@@ -107,6 +107,38 @@ const Upgrade = () => {
         })
     }
 
+    const PayWithTransfer = (e) => {
+        e.preventDefault();
+        setProceed(true)
+        let data = {
+            amount: amount,
+            currency: 'NGN',
+            walletTo: `transfer ${name}`,
+            credits: credits,
+            total: total,
+            userOnline: auth.userOnline
+        }
+        swal({
+            title: 'Fund Wallet',
+            text: 'Have you made the transfer?',
+            icon: 'warning',
+            buttons: ["Stop", "Yes, Proceed!"],
+        })
+            .then((res) => {
+                if (res) {
+                    add(data);
+                } else {
+                    swal({
+                        title: 'Fund Wallet',
+                        text: 'Cancelled by user',
+                        icon: 'error',
+                        timer: 2000
+                    })
+                }
+                setProceed(false)
+            })
+    }
+
     useEffect(() => {
         wallet.upgradeHistory(auth.userOnline)
     }, [])
@@ -161,7 +193,8 @@ const Upgrade = () => {
                                                 <div class="select">
                                                     <select onChange={(e) => setMethod(e.target.value)}>
                                                         <option value={''}>Select payment method</option>
-                                                        <option value={'card'}>INTERNET BANKING</option>
+                                                        {/* <option value={'card'}>INTERNET BANKING</option> */}
+                                                        <option value={'transfer'}>BANK TRANSFER</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -213,6 +246,49 @@ const Upgrade = () => {
                                             <img src={'https://firebasestorage.googleapis.com/v0/b/likey-603a7.appspot.com/o/images%2Fvisa-70-45.webp?alt=media&token=e2f6f984-04e6-40cd-b6b5-0cbb2df9e6b4'} alt={'visa'} />
                                             <img src={'https://firebasestorage.googleapis.com/v0/b/likey-603a7.appspot.com/o/images%2Fmaestro-70-45.webp?alt=media&token=3b2841a2-909c-4212-aba5-1a39cd0d849a'} alt={'maestro'} />
                                             <img src={'https://firebasestorage.googleapis.com/v0/b/likey-603a7.appspot.com/o/images%2Fvisa-secure-45-45.webp?alt=media&token=5949976e-06c6-4ca3-8c5e-9e396b7f388d'} alt={'visa secure'} />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className={` ${method === "transfer" ? "" : "d-none"} col-md-5 grid-margin stretch-card`}>
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <h4 className="card-title">
+                                                <strong>
+                                                    PAY WITH BANK TRANSFER
+                                                </strong>
+                                            </h4>
+
+                                            <form id="cryptoform" onSubmit={(e) => { PayWithTransfer(e) }}>
+                                                <div className="form-group">
+                                                    <label for="cryptoamount">Amount</label>
+                                                    <input type="number" min="200"
+                                                        name="cryptoamount" className="form-control" value={amount} onChange={(e) => calculateCredits(e)} placeholder="Amount" required id="cryptoamount" />
+                                                </div>
+
+                                                <div className="form-group">
+                                                    <label for="name">Name</label>
+                                                    <input type="text"
+                                                        name="name" className="form-control" onChange={e => setName(e.target.value)} value={name} placeholder="Sender Name" required id="cryptoamount" />
+                                                </div>
+
+                                                <p>
+                                                    Make a transfer of <strong>&#8358;{amount}</strong> to the bank account below:
+                                                </p>
+                                                <p>
+                                                    <strong>BANK NAME:</strong> Palmpay
+                                                </p>
+                                                <p>
+                                                    <strong>ACCOUNT NUMBER:</strong> 9168591326
+                                                </p>
+                                                <p>
+                                                    <strong>ACCOUNT NAME:</strong> TheLikey THELIKEYDOTCOM
+                                                </p>
+
+                                                <div className="d-flex justify-content-right" >
+                                                    <button type="submit" id="cryptoproceed" className="btn btn-primary">Proceed</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
