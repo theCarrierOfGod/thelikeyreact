@@ -263,7 +263,7 @@ const Upgrade = () => {
                                                 <div className="form-group">
                                                     <label for="cryptoamount">Amount</label>
                                                     <input type="number" min="200"
-                                                        name="cryptoamount" className="form-control" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Amount" required id="cryptoamount" />
+                                                        name="cryptoamount" className="form-control" value={amount} placeholder="Amount" required id="cryptoamount" />
                                                 </div>
 
                                                 <div className="form-group">

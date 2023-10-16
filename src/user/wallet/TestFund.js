@@ -94,6 +94,8 @@ const TestFund = () => {
             setSendingFunding(false);
             setShowQR(false);
             navigate('/');
+            setName('');
+            setAmount('')
         } else {
             setSendingFunding(false);
             setShowQR(false)
