@@ -8,7 +8,6 @@ import { useWallet } from '../../contexts/Wallet'
 import { useHook } from '../../contexts/Hook'
 import { useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/Auth'
-import Swal from 'sweetalert2'
 import swal from 'sweetalert'
 import Pick from '../../pages/ads/Pick'
 
@@ -142,8 +141,6 @@ const Withdraw = () => {
             alert('Withdrawals will take 7 days to arrive at your bank. Please note that holding unto your payments for 7 days gives TheLikey time to verify that the tasks you did are completed satisfactorily and have not been undone.')
         }, 2000);
     }, [location.key])
-
-
 
     return (
         <>
@@ -390,7 +387,7 @@ const Withdraw = () => {
                                     </div>
                                 </div>
 
-                                <div className="col-md-6 grid-margin stretch-card">
+                                <div className="col-md-12 grid-margin stretch-card">
                                     <div className="card">
                                         <div className="card-body">
                                             <p className="card-description">
