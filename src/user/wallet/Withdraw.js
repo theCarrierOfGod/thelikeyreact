@@ -84,7 +84,7 @@ const Withdraw = () => {
     const processBankForm = (e) => {
         e.preventDefault();
 
-        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5 || amount < 500)  {
+        if (bankName.length < 1 || accountNumber.length < 9 || accountName.length < 5 || amount < 500) {
             swal({
                 title: 'Withdraw',
                 text: 'Bank details not complete',
@@ -93,7 +93,7 @@ const Withdraw = () => {
             return;
         }
 
-        if (amount < 500)  {
+        if (amount < 500) {
             swal({
                 title: 'Withdraw',
                 text: 'Minimum withdrawal is &#8358;500',
@@ -144,6 +144,8 @@ const Withdraw = () => {
         }
     }, [location.key])
 
+    alert('Withdrawals will take 7 days to arrive at your bank. Please note that holding unto your payments for 7 days gives TheLikey time to verify that the tasks you did are completed satisfactorily and have not been undone.')
+
     return (
         <>
             <Helmet>
@@ -175,7 +177,7 @@ const Withdraw = () => {
 
                             <div className="row justify-content-start">
                                 <Pick />
-                                
+
                                 <div className="col-md-12 grid-margin stretch-card">
                                     <div className="card">
                                         <div className="card-body">
@@ -198,8 +200,8 @@ const Withdraw = () => {
                                                     className='text-info'
                                                     style={{ fontFamily: "monospace" }}>
                                                     <strong>
-                                                        No transaction fee required. 
-                                                    </strong> 
+                                                        No transaction fee required.
+                                                    </strong>
                                                 </small>
                                             </p>
                                             <h4 className="card-title">
@@ -386,6 +388,20 @@ const Withdraw = () => {
                                                 </div>
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-12 grid-margin stretch-card">
+                                    <div className="card">
+                                        <div className="card-body">
+                                            <p className="card-description">
+                                                <b>
+                                                    NOTE!!!
+                                                </b> <br /> <br />
+                                                Withdrawals will take 7 days to arrive at your bank. Please note that holding unto your payments for 7 days gives TheLikey time to verify that the tasks you did are completed satisfactorily
+                                                and have not been undone.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
 
