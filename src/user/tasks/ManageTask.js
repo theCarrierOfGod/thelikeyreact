@@ -37,7 +37,7 @@ const ManageTask = () => {
     }
 
     let cpus = [];
-    for (let i = 30; i < 121; i++) {
+    for (let i = 3; i < 121; i++) {
         cpus.push(i);
     }
 
