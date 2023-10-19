@@ -395,7 +395,8 @@ const Withdraw = () => {
                                                     NOTE!!!
                                                 </b> <br /> <br />
                                                 Withdrawals will take 7 days to arrive at your bank. Please note that holding unto your payments for 7 days gives TheLikey time to verify that the tasks you did are completed satisfactorily
-                                                and have not been undone.
+                                                and have not been undone. For example, if you joined a WhatsApp group, within the 7 days we will check if you are still in the group.
+                                                This protects both the advertiser and the publishers from poor quality delivery. It also gives advertisers time to dispute a promoter if they are not happy with the results of the job they did.
                                             </p>
                                         </div>
                                     </div>
