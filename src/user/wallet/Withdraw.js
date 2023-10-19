@@ -138,13 +138,10 @@ const Withdraw = () => {
 
     useEffect(() => {
         goNow();
-
-        return () => {
-            return true;
-        }
+        alert('Withdrawals will take 7 days to arrive at your bank. Please note that holding unto your payments for 7 days gives TheLikey time to verify that the tasks you did are completed satisfactorily and have not been undone.')
     }, [location.key])
 
-    alert('Withdrawals will take 7 days to arrive at your bank. Please note that holding unto your payments for 7 days gives TheLikey time to verify that the tasks you did are completed satisfactorily and have not been undone.')
+
 
     return (
         <>
